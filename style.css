@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    min-height: 100%;
+    width: 100vw;
+}
+.container{
+    background-color: #CBECFF;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+}
+.header{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2em;
+    align-items: center;
+    padding-top: 26px;
+    /*margin: 2em;*/
+}
+p{
+    font-size: 16px;
+}
+.header_ru{
+    margin-right: 1.3em;
+    background-color: #ffff;
+    border-radius: 50%;
+    padding: 10px;
+    color: #0962E8;
+}
+.header_en{
+    margin-right: 1.3em;
+}
+.logo{
+    min-width: 100%;
+}
+
+section{
+    /*position: relative;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.order{
+    background-color: blue;
+    height: 63px;
+    border-radius: 12px;
+    width: 70%;
+    border: none;
+}
+.telephone{
+    width: 100%;
+    height: 60%;
+}
+.content{
+    order:-1;
+}
+
+@media (max-width: 900px)  {
+    .telephone{
+        width: 110%;
+        overflow: hidden;
+    }
+}
