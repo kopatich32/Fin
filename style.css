@@ -60,6 +60,7 @@ p{
     margin-right: 1.3em;
 }
 .logo{
+    display: flex;
     min-width: 100%;
     margin-bottom: 3%;
 }
@@ -68,6 +69,7 @@ p{
     font-size: 64px;
     line-height: 130%;
     font-weight: 700;
+    color: #29374E;
 }
 .kit{
     font-family: Inter;
@@ -77,38 +79,88 @@ p{
     color:  #0962E8;
     background-color: #fff;
     border-radius: 20px;
-    padding: 1px 17px 3px  17px;
+    padding: 0 7px 0  7px;
+    margin-left: 3%;
 
 }
 
 section{
-    /*position: relative;*/
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 678px;
 }
 
 .order{
-    background-color: blue;
+    background-color: #0962E8;
     height: 63px;
     border-radius: 12px;
     width: 70%;
     border: none;
+    color: #ffffff;
 }
 .telephone{
-    width: 100%;
-    height: 60%;
+    width: 80%;
+}
+.phone{
+width: 100%;
+    margin-left: 10%;
+    margin-right: -19%;
 }
 .content{
-    order:-1;
+    justify-content: space-between;
+    width: 40%;
+    margin-left: 15%;
+
 }
 .content p {
     line-height: 27px;
     font-size: 22px;
     font-family: Inter;
     font-weight: 400;
+    margin-bottom: 3%;
 
 }
+.bottom_part_of_main{
+    position: relative;
+    top: 36px;
+    display: flex;
+    justify-content: center;
+}
+.bottom_part_of_main>div{
+    display: flex;
+    align-items: center;
+    height: 118px;
+    width: 15%;
+    margin-right: 3%;
+    background-color: #ffffff;
+    font-family: Inter;
+    font-weight: 400;
+    border-radius: 20px;
+    padding: 0 10px 0 10px;
+    box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
+}
+.bottom_part_of_main> div> img{
+    width: 20px;
+    height: 20px;
+}
+.bottom_part_of_main span{
+    background-color: #EFF9FF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.bottom_part_of_main p{
+    width: 89%;
+}
+
+
+
 
 @media (max-width: 900px)  {
     .telephone{
