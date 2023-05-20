@@ -3,6 +3,31 @@
     margin: 0;
     padding: 0;
 }
+
+@font-face {
+    src: local("Inter");
+    src: url("../project/Inter_Fonts/Inter-Light.ttf");
+    font-family: "Inter";
+    font-weight: 200;
+}
+@font-face {
+    src: local("Inter");
+    src: url("../project/Inter_Fonts/Inter-Medium.ttf");
+    font-family: "Inter";
+    font-weight: 400;
+}
+@font-face {
+    src: local("Inter");
+    src: url("../project/Inter_Fonts/Inter-SemiBold.ttf");
+    font-family: "Inter";
+    font-weight: 700;
+}
+@font-face {
+    src: local("Inter");
+    src: url("../project/Inter_Fonts/Inter-Bold.ttf");
+    font-family: "Inter";
+    font-weight: 900;
+}
 html,body{
     min-height: 100%;
     width: 100vw;
@@ -36,6 +61,24 @@ p{
 }
 .logo{
     min-width: 100%;
+    margin-bottom: 3%;
+}
+.fin{
+    font-family: Inter;
+    font-size: 64px;
+    line-height: 130%;
+    font-weight: 700;
+}
+.kit{
+    font-family: Inter;
+    font-size: 64px;
+    line-height: 130%;
+    font-weight: 700;
+    color:  #0962E8;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1px 17px 3px  17px;
+
 }
 
 section{
@@ -58,6 +101,13 @@ section{
 }
 .content{
     order:-1;
+}
+.content p {
+    line-height: 27px;
+    font-size: 22px;
+    font-family: Inter;
+    font-weight: 400;
+
 }
 
 @media (max-width: 900px)  {
