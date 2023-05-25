@@ -6,25 +6,25 @@
 
 @font-face {
     src: local("Inter");
-    src: url("../project/Inter_Fonts/Inter-Light.ttf");
+    src: url("Inter_Fonts/Inter-Light.ttf");
     font-family: "Inter";
     font-weight: 200;
 }
 @font-face {
     src: local("Inter");
-    src: url("../project/Inter_Fonts/Inter-Medium.ttf");
+    src: url("Inter_Fonts/Inter-Medium.ttf");
     font-family: "Inter";
     font-weight: 400;
 }
 @font-face {
     src: local("Inter");
-    src: url("../project/Inter_Fonts/Inter-SemiBold.ttf");
+    src: url("Inter_Fonts/Inter-SemiBold.ttf");
     font-family: "Inter";
     font-weight: 700;
 }
 @font-face {
     src: local("Inter");
-    src: url("../project/Inter_Fonts/Inter-Bold.ttf");
+    src: url("Inter_Fonts/Inter-Bold.ttf");
     font-family: "Inter";
     font-weight: 900;
 }
@@ -106,7 +106,6 @@ section{
 .phone{
 width: 100%;
     margin-left: 10%;
-    margin-right: -19%;
 }
 .content{
     justify-content: space-between;
@@ -132,7 +131,7 @@ width: 100%;
     display: flex;
     align-items: center;
     height: 118px;
-    width: 15%;
+    width: 25%;
     margin-right: 3%;
     background-color: #ffffff;
     font-family: Inter;
@@ -140,6 +139,10 @@ width: 100%;
     border-radius: 20px;
     padding: 0 10px 0 10px;
     box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
+}
+.background_icons{
+    align-self: flex-start;
+    margin-top: 10%;
 }
 .bottom_part_of_main> div> img{
     width: 20px;
@@ -158,8 +161,45 @@ width: 100%;
 .bottom_part_of_main p{
     width: 89%;
 }
+h2{
+    text-align: center;
+    margin-top:10%; 
+    font-size: 38px;
+    color: #29374E;
+    font-family: Inter;
+    font-weight: 200;
+}
+h2 span{
+    color: #0962E8;
+    
+}
+.row_of_risk{
+    font-family: Inter;
+    font-weight: 400;
+}
+.left_block{
+    display: flex;
+    justify-content: center;
+    background-color: #E9F6FF;
+    width: 503px;
+    height: 328px;
+    border-radius: 30px;
+}
 
-
+.left_block p:first-child{
+    font-weight: bold;
+    font-size: 20px;
+}
+.left_text p:first-child{
+    margin-bottom:10px;
+}
+.left_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10%;
+}
 
 
 @media (max-width: 900px)  {
