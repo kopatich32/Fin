@@ -77,6 +77,7 @@ html, body {
     line-height: 130%;
     font-weight: 700;
     color: #29374E;
+    animation: moveTop .5s ease-out .3s backwards;
 }
 
 .kit {
@@ -88,8 +89,22 @@ html, body {
     border-radius: 20px;
     padding: 0 7px 0 7px;
     margin-left: 3%;
+    animation: moveRight .5s ease-out .8s backwards;
+
+}
+@keyframes moveTop {
+    0% {
+        transform: translateY(-400%);
+        opacity: 0;
+    }
 }
 
+@keyframes moveRight {
+    0% {
+        transform: translateX(300%);
+        opacity: 0;
+    }
+}
 section {
     display: flex;
     align-items: center;
@@ -107,6 +122,7 @@ section {
     color: #ffffff;
     font-size: 18px;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .telephone {
