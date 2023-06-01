@@ -372,13 +372,14 @@ main {
         grid-template-columns: 100px 100px;
         grid-template-rows: 118px 118px;
         row-gap: 15px;
+        column-gap: 20%;
         font-size: 14px;
-        column-gap: 21%;
         padding-bottom: 36px;
 
     }
+
     .bottom_part_of_main div{
-        width: 164px;
+        width: 160px;
     }
 h2 {
     font-size: 24px;
@@ -386,11 +387,52 @@ h2 {
 .row_of_risk{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .left_block{
     margin-bottom: 30px;
+    width: 340px;
+    height: 215px;
+    margin-right: 0;
 }
-main, .bottom_part{
-    display: none;
+.right_block{
+    width: 344px;
+    height: 215px;
+
 }
+
+.left_text, .right_text{
+    width: 172px;
+}
+
+    .left_block img, .right_block img{
+        display: flex;
+        align-self: flex-end;
+        width: 142px;
+        height: 190px;
+    }
+    .bottom_part{
+        flex-direction: column;
+        align-items: center;
+    }
+    .left_of_bottom{
+        width: 342px;
+        text-align: center;
+        margin-right: 0;
+    }
+    .left_of_bottom p:first-child{
+        font-size: 24px;
+    }.left_of_bottom p:nth-child(2){
+        font-size: 14px;
+    }
+     .left_side > div, .right_side > div{
+         width: 164px;
+         height: 118px;
+         box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
+         border-radius: 20px;
+         font-size: 14px;
+     }
+     .right_of_bottom{
+         justify-content: center;
+     }
 }
