@@ -464,3 +464,58 @@ h2 {
      }
 
 }
+@media screen and (max-width: 1045px){
+    .project{overflow: hidden;
+
+    }
+    .telephone {
+        width: 130%;
+        margin-left: -70px;
+    }
+  .bottom_part_of_main > div{
+    width: 170px;
+  }
+  .row_of_risk{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .left_block{
+    margin-bottom: 5%;
+  }
+  .bottom_part{
+    display: grid;
+    row-gap: 10%;
+  }
+  .left_of_bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+  .left_of_bottom > p {
+    font-size: 14px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .right_of_bottom{
+    order: -1;
+  }
+}
+@media screen and (max-width: 740px){
+    .bottom_part_of_main{
+        position: static;
+        display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+row-gap: 10%;
+} 
+.bottom_part_of_main > div{
+    width: auto;
+}
+.container{
+    padding-right: 20px;
+}
+}
