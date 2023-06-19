@@ -3,26 +3,29 @@
   flex-direction: @dir;
   justify-content: @just;
   align-items: @align;
-
 }
+
 .Font(@url, @weight){
   src: local("Inter");
   src: url(@url);
   font-family: "Inter";
   font-weight: @weight;
 }
+
+.size(@width, @height){
+  width: @width;
+  height: @height;
+}
+
 @font-face {
   .Font("Inter_Fonts/Inter-Light.ttf", 200);
 }
-
 @font-face {
   .Font("Inter_Fonts/Inter-Medium.ttf", 400);
 }
-
 @font-face {
  .Font("Inter_Fonts/Inter-SemiBold.ttf", 700);
 }
-
 @font-face {
 .Font("Inter_Fonts/Inter-Bold.ttf", 900);
 }
@@ -40,9 +43,8 @@ html, body {
 }
 
 .container {
+  .size(100%, 100%);
   background-color: #CBECFF;
-  width: 100%;
-  height: 100%;
   padding-left: 20px;
 }
 
@@ -114,10 +116,9 @@ section {
 }
 
 .order {
+.size(200px, 63px);
   background-color: #0962E8;
-  height: 63px;
   border-radius: 12px;
-  width: 200px;
   border: none;
   color: #ffffff;
   font-size: 18px;
@@ -137,7 +138,6 @@ section {
 .content {
   width: 40%;
   margin-left: 15%;
-
 }
 
 .content p {
@@ -156,8 +156,7 @@ section {
 
 .bottom_part_of_main > div {
   .Flex(row, normal, center);
-  height: 118px;
-  width: 241px;
+  .size(241px, 118px);
   margin-right: 3%;
   background-color: #ffffff;
   font-weight: 400;
@@ -167,20 +166,16 @@ section {
 }
 
 .background_icons {
+  .Flex(row, center, center);
+  .size(40px, 40px);
   align-self: flex-start;
   margin-top: 10%;
   background-color: #EFF9FF;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .bottom_part_of_main > div > img {
-  width: 20px;
-  height: 20px;
+  .size(20px, 20px);
 }
 
 .bottom_part_of_main p {
@@ -189,8 +184,7 @@ section {
 
 h2 {
   text-align: center;
-  margin-top: 115px;
-  margin-bottom: 44px;
+  margin: 115px 0 44px 0;
   font-size: 38px;
   color: #29374E;
   font-weight: 400;
@@ -207,9 +201,8 @@ h2 {
 
 .left_block {
   .Flex(row, normal, flex-start);
+  .size(502px, 328px);
   background-color: #E9F6FF;
-  width: 502px;
-  height: 328px;
   border-radius: 30px;
   margin-right: 20px;
 }
@@ -225,15 +218,13 @@ h2 {
 
 .left_text {
   .Flex(column, normal, normal);
-  margin-left: 20px;
-  margin-top: 37px;
+  margin: 37px 0 0 20px;
 }
 
 .right_block {
-  .Flex(row, space-beetween, normal);
+  .Flex(row, space-between, normal);
+  .size(502px, 328px);
   background-color: #E9F6FF;
-  width: 502px;
-  height: 328px;
   border-radius: 30px;
 }
 
@@ -288,19 +279,14 @@ main {
   margin-right: 20px;
 }
 
-.left_side > div {
-  width: 231px;
-  height: 100px;
-
-}
-
-.right_side > div {
-  width: 231px;
-  height: 100px;
+.left_side, .right_side{
+  div{
+    .size(231px, 100px);
+  }
 }
 
 .right_of_bottom {
-  display: flex;
+  .Flex(row, normal, normal)
 }
 
 .right_of_bottom span {
@@ -321,13 +307,11 @@ main {
   }
 
   .phone {
+    .size(100%, 423px);
     position: relative;
     background-image: url("telephone.png");
     background-size: 120%;
     background-repeat: no-repeat;
-    /*background-position-x: -60px;*/
-    width: 100%;
-    height: 423px;
     z-index: 1000;
   }
 
@@ -335,16 +319,15 @@ main {
     .Flex(column, normal, normal);
     overflow: hidden;
     height: auto;
-
   }
 
   .content {
     position: relative;
-    width: 90%;
+    width: 100%;
     margin-top: -66px;
     margin-left: 0;
     z-index: 3000;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
   }
 
   .content p {
@@ -380,14 +363,12 @@ main {
     .Flex(column, normal, center);
   }
   .left_block{
+    .size(340px, 215px);
     margin-bottom: 30px;
-    width: 340px;
-    height: 215px;
     margin-right: 0;
   }
   .right_block{
-    width: 344px;
-    height: 215px;
+    .size(344px, 215px);
 
   }
 
@@ -396,10 +377,9 @@ main {
   }
 
   .left_block img, .right_block img{
+    .size(142px, 190px);
     display: flex;
     align-self: flex-end;
-    width: 142px;
-    height: 190px;
   }
   .bottom_part{
     .Flex(column, normal, center);
@@ -433,8 +413,7 @@ main {
    }
   .left_side > div, .right_side > div{
     .Flex(column, normal, center);
-    width: auto;
-    height: auto;
+    .size(auto , auto);
     box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     font-size: 14px;
@@ -487,11 +466,10 @@ main {
   }
 
   .phone {
+    .size(100%, 423px);
     position: relative;
     background-size: 120%;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 423px;
     z-index: 1000;
   }
 
@@ -515,16 +493,14 @@ main {
   }
 
   .left_block {
+    .size(auto, 268px);
     margin: 0 0 20px;
-    width: auto;
     max-width: 600px;
-    height: 268px;
   }
 
   .right_block {
-    width: auto;
+    .size(auto, 268px);
     max-width: 600px;
-    height: 268px;
   }
 
   .bottom_part {
@@ -553,8 +529,7 @@ main {
 
   .left_side > div, .right_side > div {
     .Flex(column, normal, center);
-    width: auto;
-    height: auto;
+    .size(auto, auto);
     box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     font-size: 14px;
@@ -579,7 +554,6 @@ main {
 //    flex-direction: column;
 //  }
 //}
-
 
 
 
