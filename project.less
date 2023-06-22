@@ -16,7 +16,7 @@
   width: @width;
   height: @height;
 }
-
+@footerColor: #CBECFF;
 @font-face {
   .Font("Inter_Fonts/Inter-Light.ttf", 200);
 }
@@ -295,6 +295,11 @@ main {
   margin-bottom: 10px;
 }
 
+
+
+
+
+
 @media screen and (max-width: 414px) {
   .container{
     padding: 0;
@@ -558,4 +563,35 @@ main {
 //}
 
 
+// footer{
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// background-color: @footerColor - #222222;
+// height: 70px;
+// padding: 0 2% 0 2%;
+// align-content: center;
+// .footRight{
+// // justify-self: end;
+// }
+// }
 
+
+
+
+footer{
+  .Flex(row, space-between, center);
+  background-color: @footerColor;
+  padding: 0 2% 0 2%;
+  height: 100px;
+  
+}
+.anchor_top{
+  .Flex(row, normal, center);
+  .footRight{
+    margin-right: 50px;
+  }
+.icon{
+  font-size: 50px;
+}
+
+}
