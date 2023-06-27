@@ -17,6 +17,7 @@
   height: @height;
 }
 @footerColor: #CBECFF;
+@buttonColor: #0962E8;
 @font-face {
   .Font("Inter_Fonts/Inter-Light.ttf", 200);
 }
@@ -61,7 +62,7 @@ html, body {
   background-color: #ffff;
   border-radius: 50%;
   padding: 10px;
-  color: #0962E8;
+  color: @buttonColor;
   cursor: pointer;
 }
 
@@ -88,7 +89,7 @@ html, body {
   font-size: 64px;
   line-height: 130%;
   font-weight: 700;
-  color: #0962E8;
+  color: @buttonColor;
   background-color: #fff;
   border-radius: 20px;
   padding: 0 7px 0 7px;
@@ -117,7 +118,7 @@ section {
 
 .order {
 .size(200px, 63px);
-  background-color: #0962E8;
+  background-color: @buttonColor;
   border-radius: 12px;
   border: none;
   color: #ffffff;
@@ -191,7 +192,7 @@ h2 {
 }
 
 .text_color {
-  color: #0962E8;
+  color: @buttonColor;
 }
 
 .row_of_risk {
@@ -556,33 +557,21 @@ main {
     width: 50%;
   }
 }
+
 //@media screen and (min-width: 821px){
 //  .row_of_risk{
 //    flex-direction: column;
 //  }
 //}
 
-
-// footer{
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-// background-color: @footerColor - #222222;
-// height: 70px;
-// padding: 0 2% 0 2%;
-// align-content: center;
-// .footRight{
-// // justify-self: end;
-// }
-// }
-
-
-
-
 footer{
   .Flex(row, space-between, center);
   background-color: @footerColor;
   padding: 0 2% 0 2%;
   height: 100px;
+  .icon{
+    color: @buttonColor;
+  }
   
 }
 .anchor_top{
