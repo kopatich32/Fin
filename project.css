@@ -281,6 +281,14 @@ main {
 .hamburger_menu {
   display: none;
 }
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  background-color: #badbee;
+}
 @media screen and (max-width: 414px) {
   .menu {
     display: block;

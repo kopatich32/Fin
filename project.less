@@ -288,7 +288,12 @@ main {
 .hamburger_menu{
   display: none;
 }
+header{
+  .Flex(row, space-around, center);
+  height: 70px;
+  background-color: @footerColor - #111111;
 
+}
 @media screen and (max-width: 414px) {
 
   // Animation of burger to cross
@@ -308,36 +313,29 @@ main {
         background-color: transparent;
         transition: .6s;
       }
-
       &.choose .hamburger:before {
         transform: rotate(45deg) translate(25px, -25px);
         transition: .6s;
         background-color: rgba(215, 38, 38, 0.98);
         height: 10px;
-
       }
-
       &.choose .hamburger:after {
         transform: rotate(-45deg) translate(25px, 25px);
         transition: .6s;
         background-color: rgba(215, 38, 38, 0.98);
         height: 10px;
       }
-
       .hamburger {
         width: 50px;
         height: 6px;
         background-color: black;
         transition: all .6s ease;
-
         &:before {
           transform: translateY(-15px);
         }
-
         &:after {
           transform: translateY(15px);
         }
-
         &:before, &:after {
           position: absolute;
           content: '';
