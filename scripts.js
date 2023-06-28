@@ -10,17 +10,26 @@ let arrow = document.querySelector('a[href*="#"]')
 
 // Hamburger Menu
 let hamburgerButton = document.querySelector('.hamburger_menu')
-let verticalMenu = document.querySelector('.links')
+let verticalMenu = document.querySelector('header')
 let cross = document.querySelector('.cross')
+cross.onclick = function(){
+        verticalMenu.style.left = '-70%';
+
+}
+
 hamburgerButton.addEventListener('click', function(event){
-verticalMenu.style.left = '0'
-// hamburgerButton.style.display = 'none'
-// setTimeout(function(){
-//     cross.style.display = 'block'
-// },900)
+    let has = hamburgerButton.classList.toggle('choose')
+    if(has) { verticalMenu.style.left = '0px'
+        hamburgerButton.classList.remove('choose')
+    }else{
+        verticalMenu.style.left = ''
+    }
+    event.stopPropagation()
 })
-cross.onclick = function(event){
-    verticalMenu.style.left = '-70%';
-    // cross.style.display = 'none'
-    // hamburgerButton.style.display = 'block'
+
+document.addEventListener('click', notMenu)
+function notMenu(e){
+    if(!verticalMenu.contains(e.target)){
+        verticalMenu.style.left = null
+    }
 }

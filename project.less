@@ -294,42 +294,69 @@ display: none;
 
 
 @media screen and (max-width: 414px) {
-.hamburger_menu{
-  display: block;
-  position: absolute;
-  right: -20%;
-  top: 20px;
-    z-index: 9999;
-}
-header  .links{ 
-position: absolute;
-.Flex(column, center, flex-start);
-.size(70%, 100vh);
-padding-left: 40px;
-font-size: 24px;
-// z-index: 99999;
-transition: 1s;
-div{
-  margin-bottom: 40px;
-}
-}
-header{
-  position: absolute;
-  .size(80%, 100vh);
-  left: 0;
-  top: 0;
-  transition: 1s;
-  z-index: 1000000000;
-}
-header{
   .cross{
     display: block;
-    position: absolute;
-    z-index: 100000;
-    right: 10%;
-    top: 2%;
+    cursor: pointer;
   }
-}
+  .hamburger_menu{
+    display: block;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    z-index: 99999999;
+    cursor: pointer;
+  }
+  header{
+    position: absolute;
+      .Flex(column, center, flex-start);
+    height: 100vh;
+    width: 70%;
+    left: -70%;
+    background-color: yellow;
+    z-index:999999999;
+    transition: 1s;
+    .cross{
+      position: relative;
+      top: -45%;
+      left: 80%;
+    }
+  }
+//.hamburger_menu{
+//  display: block;
+//  position: absolute;
+//  right: -20%;
+//  top: 20px;
+//    z-index: 9999;
+//}
+//header  .links{
+//position: absolute;
+//.Flex(column, center, flex-start);
+//.size(70%, 100vh);
+//padding-left: 40px;
+//font-size: 24px;
+//// z-index: 99999;
+//transition: 1s;
+//div{
+//  margin-bottom: 40px;
+//}
+//}
+//header{
+//  position: absolute;
+//  .size(80%, 100vh);
+//  left: 0;
+//  top: 0;
+//  transition: 1s;
+//  z-index: 1000000000;
+//}
+//header{
+//  .cross{
+//    display: block;
+//    position: absolute;
+//    z-index: 100000;
+//    right: 10%;
+//    top: 2%;
+//  }
+//}
 
 
   .container{
@@ -461,7 +488,7 @@ header{
 @media screen and (min-width:415px) and (max-width: 820px) {
 
   .bottom_part_of_main {
-    position: s tatic;
+    position: static;
     display: grid;       
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
@@ -622,4 +649,48 @@ footer{
   font-size: 50px;
 }
 
+}
+// Animation of cross
+.burger{
+  .Flex(column, center, center);
+  width: 100px;
+  height: 100px;
+  margin-left: 200px;
+  &:hover .hamburger{
+    transform: translateX(-50px);
+    background-color: transparent;
+    transition: .6s;
+  }
+  &:hover .hamburger:before{
+    transform: rotate(45deg) translate(40px,-40px);
+    transition: .6s;
+    background-color: rgba(215, 38, 38, 0.98);
+    height: 10px;
+
+  }
+  &:hover .hamburger:after{
+    transform: rotate(-45deg) translate(40px,40px);
+    transition: .6s;
+    background-color: rgba(215, 38, 38, 0.98);
+    height: 10px;
+  }
+  .hamburger {
+    width: 80px;
+    height: 6px;
+    background-color: black;
+    &:before {
+      transform: translateY(-25px);
+    }
+
+    &:after {
+      transform: translateY(25px);
+    }
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      width: 80px;
+      height: 6px;
+      background-color: black;
+    }
+  }
 }
