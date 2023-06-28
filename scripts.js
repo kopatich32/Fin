@@ -1,3 +1,5 @@
+//Anchor animation
+
 let arrow = document.querySelector('a[href*="#"]')
     arrow.addEventListener('click', function(event){
     event.preventDefault();
@@ -9,18 +11,13 @@ let arrow = document.querySelector('a[href*="#"]')
 })
 
 // Hamburger Menu
-let hamburgerButton = document.querySelector('.hamburger_menu')
+let wrapperBurger = document.querySelector('.menu')
+let hamburgerButton = document.querySelector('.burger')
 let verticalMenu = document.querySelector('header')
-let cross = document.querySelector('.cross')
-cross.onclick = function(){
-        verticalMenu.style.left = '-70%';
 
-}
-
-hamburgerButton.addEventListener('click', function(event){
+wrapperBurger.addEventListener('click', function(event){
     let has = hamburgerButton.classList.toggle('choose')
     if(has) { verticalMenu.style.left = '0px'
-        hamburgerButton.classList.remove('choose')
     }else{
         verticalMenu.style.left = ''
     }
@@ -31,5 +28,6 @@ document.addEventListener('click', notMenu)
 function notMenu(e){
     if(!verticalMenu.contains(e.target)){
         verticalMenu.style.left = null
+        hamburgerButton.classList.remove('choose')
     }
 }

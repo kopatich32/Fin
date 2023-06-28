@@ -288,24 +288,68 @@ main {
 .hamburger_menu{
   display: none;
 }
-.cross{
-display: none;
-}
-
 
 @media screen and (max-width: 414px) {
-  .cross{
-    display: block;
-    cursor: pointer;
-  }
-  .hamburger_menu{
+
+  // Animation of burger to cross
+  .menu {
     display: block;
     position: absolute;
     top: 3%;
     right: 5%;
-    z-index: 99999999;
+    height: 35px;
+    padding-top: 14px;
+    z-index: 9999999999;
     cursor: pointer;
+    .burger {
+      position: relative;
+      &.choose .hamburger {
+        transform: translateX(-50px);
+        background-color: transparent;
+        transition: .6s;
+      }
+
+      &.choose .hamburger:before {
+        transform: rotate(45deg) translate(25px, -25px);
+        transition: .6s;
+        background-color: rgba(215, 38, 38, 0.98);
+        height: 10px;
+
+      }
+
+      &.choose .hamburger:after {
+        transform: rotate(-45deg) translate(25px, 25px);
+        transition: .6s;
+        background-color: rgba(215, 38, 38, 0.98);
+        height: 10px;
+      }
+
+      .hamburger {
+        width: 50px;
+        height: 6px;
+        background-color: black;
+        transition: all .6s ease;
+
+        &:before {
+          transform: translateY(-15px);
+        }
+
+        &:after {
+          transform: translateY(15px);
+        }
+
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: 50px;
+          height: 6px;
+          background-color: black;
+          transition: all .6s ease;
+        }
+      }
+    }
   }
+
   header{
     position: absolute;
       .Flex(column, center, flex-start);
@@ -321,13 +365,7 @@ display: none;
       left: 80%;
     }
   }
-//.hamburger_menu{
-//  display: block;
-//  position: absolute;
-//  right: -20%;
-//  top: 20px;
-//    z-index: 9999;
-//}
+
 //header  .links{
 //position: absolute;
 //.Flex(column, center, flex-start);
@@ -618,19 +656,6 @@ display: none;
 //}
 
 
-// footer{
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-// background-color: @footerColor - #222222;
-// height: 70px;
-// padding: 0 2% 0 2%;
-// align-content: center;
-// .footRight{
-// // justify-self: end;
-// }
-// }
-
-
 footer{
   .Flex(row, space-between, center);
   background-color: @footerColor;
@@ -649,48 +674,4 @@ footer{
   font-size: 50px;
 }
 
-}
-// Animation of cross
-.burger{
-  .Flex(column, center, center);
-  width: 100px;
-  height: 100px;
-  margin-left: 200px;
-  &:hover .hamburger{
-    transform: translateX(-50px);
-    background-color: transparent;
-    transition: .6s;
-  }
-  &:hover .hamburger:before{
-    transform: rotate(45deg) translate(40px,-40px);
-    transition: .6s;
-    background-color: rgba(215, 38, 38, 0.98);
-    height: 10px;
-
-  }
-  &:hover .hamburger:after{
-    transform: rotate(-45deg) translate(40px,40px);
-    transition: .6s;
-    background-color: rgba(215, 38, 38, 0.98);
-    height: 10px;
-  }
-  .hamburger {
-    width: 80px;
-    height: 6px;
-    background-color: black;
-    &:before {
-      transform: translateY(-25px);
-    }
-
-    &:after {
-      transform: translateY(25px);
-    }
-    &:before, &:after {
-      position: absolute;
-      content: '';
-      width: 80px;
-      height: 6px;
-      background-color: black;
-    }
-  }
 }

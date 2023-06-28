@@ -281,21 +281,57 @@ main {
 .hamburger_menu {
   display: none;
 }
-.cross {
-  display: none;
-}
 @media screen and (max-width: 414px) {
-  .cross {
-    display: block;
-    cursor: pointer;
-  }
-  .hamburger_menu {
+  .menu {
     display: block;
     position: absolute;
     top: 3%;
     right: 5%;
-    z-index: 99999999;
+    height: 35px;
+    padding-top: 14px;
+    z-index: 9999999999;
     cursor: pointer;
+  }
+  .menu .burger {
+    position: relative;
+  }
+  .menu .burger.choose .hamburger {
+    transform: translateX(-50px);
+    background-color: transparent;
+    transition: .6s;
+  }
+  .menu .burger.choose .hamburger:before {
+    transform: rotate(45deg) translate(25px, -25px);
+    transition: .6s;
+    background-color: rgba(215, 38, 38, 0.98);
+    height: 10px;
+  }
+  .menu .burger.choose .hamburger:after {
+    transform: rotate(-45deg) translate(25px, 25px);
+    transition: .6s;
+    background-color: rgba(215, 38, 38, 0.98);
+    height: 10px;
+  }
+  .menu .burger .hamburger {
+    width: 50px;
+    height: 6px;
+    background-color: black;
+    transition: all .6s ease;
+  }
+  .menu .burger .hamburger:before {
+    transform: translateY(-15px);
+  }
+  .menu .burger .hamburger:after {
+    transform: translateY(15px);
+  }
+  .menu .burger .hamburger:before,
+  .menu .burger .hamburger:after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 6px;
+    background-color: black;
+    transition: all .6s ease;
   }
   header {
     position: absolute;
@@ -606,49 +642,4 @@ footer {
 }
 .anchor_top .icon {
   font-size: 50px;
-}
-.burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  margin-left: 200px;
-}
-.burger:hover .hamburger {
-  transform: translateX(-50px);
-  background-color: transparent;
-  transition: .6s;
-}
-.burger:hover .hamburger:before {
-  transform: rotate(45deg) translate(40px, -40px);
-  transition: .6s;
-  background-color: rgba(215, 38, 38, 0.98);
-  height: 10px;
-}
-.burger:hover .hamburger:after {
-  transform: rotate(-45deg) translate(40px, 40px);
-  transition: .6s;
-  background-color: rgba(215, 38, 38, 0.98);
-  height: 10px;
-}
-.burger .hamburger {
-  width: 80px;
-  height: 6px;
-  background-color: black;
-}
-.burger .hamburger:before {
-  transform: translateY(-25px);
-}
-.burger .hamburger:after {
-  transform: translateY(25px);
-}
-.burger .hamburger:before,
-.burger .hamburger:after {
-  position: absolute;
-  content: '';
-  width: 80px;
-  height: 6px;
-  background-color: black;
 }
