@@ -15,14 +15,27 @@ let wrapperBurger = document.querySelector('.menu')
 let hamburgerButton = document.querySelector('.burger')
 let verticalMenu = document.querySelector('header')
 
-wrapperBurger.addEventListener('click', function(event){
-    let has = hamburgerButton.classList.toggle('choose')
-    if(has) { verticalMenu.style.left = '0px'
-    }else{
-        verticalMenu.style.left = ''
+
+
+window.addEventListener('click', function(event){
+    if(event.target.classList == 'hamburger' || event.target.classList == 'menu'){
+        let has = hamburgerButton.classList.toggle('choose')
+        if(has){
+            verticalMenu.style.left = '0'
+        }else{verticalMenu.style.left = '-70%'
     }
-    event.stopPropagation()
+    }
 })
+
+
+// wrapperBurger.addEventListener('click', function(event){
+//     let has = hamburgerButton.classList.toggle('choose')
+//     if(has) { verticalMenu.style.left = '0px'
+//     }else{
+//         verticalMenu.style.left = ''
+//     }
+//     event.stopPropagation()
+// })
 
 document.addEventListener('click', notMenu)
 function notMenu(e){
