@@ -1,0 +1,64 @@
+.Flex(@dir, @just, @align){
+    display: flex;
+    flex-direction: @dir;
+    justify-content: @just;
+    align-items: @align;
+  }
+  
+  .size(@width, @height){
+    width: @width;
+    height: @height;
+  }
+  @footerColor: #CBECFF;
+  @textColor: #0962E8;
+  @mainTextColor: rgb(47, 52, 65);
+
+.logo {
+    display: flex;
+    min-width: 100%;
+    margin-bottom: 3%;
+  }
+.fin2 {
+    font-size: 34px;
+    line-height: 130%;
+    font-weight: 700;
+    color: #29374E;
+  }
+  
+  .kit2 {
+    font-size: 34px;
+    line-height: 130%;
+    font-weight: 700;
+    color: @textColor;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 7px 0 7px;
+    margin-left: 3%;
+  
+  }
+  header{
+    a:nth-child(2){
+        border-bottom: 3px solid black;
+    }
+  }
+  main{
+    .Flex(row, normal, normal);
+    .text{
+      .Flex(column, center, flex-start);
+      margin-left: 10%;
+      h1{
+        font-size: 54px;
+        margin-bottom: 2%;
+color: @mainTextColor;     
+ }
+      p{
+        font-size: 28px;
+        width: 40%;
+        color: @mainTextColor;     
+      }
+    }
+    .picture{
+      width: 90%;
+      height: 90%;
+    }
+  }

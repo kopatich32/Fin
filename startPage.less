@@ -42,7 +42,19 @@ html, body {
   min-height: 100%;
   width: 100vw;
 }
-
+header{
+  a{
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 0 solid transparent;
+    transition: .1s;
+    padding: 5px ;
+    &:hover{
+      border-bottom: 3px solid black;
+      transition: all .1s;
+    }
+  }
+}
 .container {
   .size(100%, 100%);
   background-color: #CBECFF;
@@ -354,14 +366,9 @@ header{
     height: 100vh;
     width: 70%;
     left: -70%;
-    background-color: yellow;
+    background-color: @footerColor - #111;
     z-index:999999999;
     transition: 1s;
-    .cross{
-      position: relative;
-      top: -45%;
-      left: 80%;
-    }
   }
 
 //header  .links{
