@@ -13,6 +13,10 @@
   @textColor: #0962E8;
   @mainTextColor: rgb(47, 52, 65);
 
+body, html{
+  width: 100%;
+  height: 100%;
+}
 .logo {
     display: flex;
     min-width: 100%;
@@ -42,6 +46,7 @@
     }
   }
   main{
+    flex: 1 1 auto;
     .Flex(row, normal, normal);
     .text{
       .Flex(column, center, flex-start);
@@ -61,4 +66,8 @@ color: @mainTextColor;
       width: 90%;
       height: 90%;
     }
+  }
+  .cont{
+    .Flex(column,normal, normal);
+    min-height: 100%;
   }
