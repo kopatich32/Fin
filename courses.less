@@ -74,12 +74,20 @@ align-self: center;
 padding-right: 50px;
 }
 .section{
+  .Flex(column, normal, normal);
   .courseOfCurrency{
     .Flex(column, center, center)
   }
-  .Flex(column, normal, normal);
   .current_date{
     font-size: 30px;
     
   }
+}
+.gridContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+p{
+  border: 2px solid red();
+}
 }

@@ -56,7 +56,18 @@
             <h2>Курс валют</h2>
             <p class="current_date"></p>
         </div>
-    </div class="section">
+        <div class="gridContainer">
+            <p>г. Калуга ул. Кирова д. 1</p>
+            <p>Покупка</p>
+            <p>Продажа</p>
+            <p>24.75</p>
+            <p>Us flag</p>
+            <p>27.10</p>
+            <p>24.83</p>
+            <p>euro flag</p>
+            <p>27.50</p>
+        </div>
+    </div>
     <footer>
         <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
 
@@ -67,18 +78,18 @@
             </a>
         </div>
     </footer>
-    
+
 </div>
     <script src="scripts.js"></script>
     <!-- https://www.vtb.ru/personal/platezhi-i-perevody/obmen-valjuty/ -->
 </body>
 <script>
+    let currentValue = document.querySelector('.current_date')
     let date = new Date;
     let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
     function getMonth (date){
 return allMonth[date.getMonth()]
     }
-    let currentValue = document.querySelector('.current_date')
 let thisYear = date.getFullYear();
 let thisDay = date.getDate();
 currentValue.innerHTML = thisYear + '-' + getMonth(date) + '-' + thisDay
