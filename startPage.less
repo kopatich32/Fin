@@ -43,6 +43,9 @@ html, body {
   width: 100vw;
 }
 header{
+  .Flex(row, space-evenly, center);
+  height: 70px;
+  background-color: @footerColor - #111111;
   a{
     text-decoration: none;
     color: inherit;
@@ -300,12 +303,12 @@ main {
 .hamburger_menu{
   display: none;
 }
-header{
-  .Flex(row, space-around, center);
-  height: 70px;
-  background-color: @footerColor - #111111;
+// header{
+//   .Flex(row, space-around, center);
+//   height: 70px;
+//   background-color: @footerColor - #111111;
 
-}
+// }
 @media screen and (max-width: 414px) {
 
   // Animation of burger to cross

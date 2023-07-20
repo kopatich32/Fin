@@ -46,14 +46,17 @@
     <main>
         <div class="text">
             <h1>Курсы валют и обмен</h1>
-            <p>Выгодный обмен валют от банка ВТБ. Информация о курсах обмена иностранных валют является справочной и
-                может меняться в течение дня</p>
+            <p>Выгодный обмен валют от банка. Информация о курсах обмена иностранных валют является справочной и
+                может меняться в течение дня.</p>
         </div>
-
-        <div class="picture">
-            <!--            <img src="dollar_euro.jpg" alt="dollar/euro">-->
-        </div>
+        <img class="picture" src="dollar_euro.jpg" alt="dollar/euro">
     </main>
+    <div class="section">
+        <div class="courseOfCurrency">
+            <h2>Курс валют</h2>
+            <p class="current_date"></p>
+        </div>
+    </div class="section">
     <footer>
         <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
 
@@ -69,5 +72,17 @@
     <script src="scripts.js"></script>
     <!-- https://www.vtb.ru/personal/platezhi-i-perevody/obmen-valjuty/ -->
 </body>
+<script>
+    let date = new Date;
+    let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+    function getMonth (date){
+return allMonth[date.getMonth()]
+    }
+    let currentValue = document.querySelector('.current_date')
+
+let thisYear = date.getFullYear();
+let thisDay = date.getDate();
+currentValue.innerHTML = thisYear + '-' + getMonth(date) + '-' + thisDay
+</script>
 
 </html>
