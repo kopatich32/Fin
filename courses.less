@@ -62,12 +62,39 @@ color: @mainTextColor;
         color: @mainTextColor;     
       }
     }
-    .picture{
-      width: 90%;
-      height: 90%;
-    }
   }
   .cont{
     .Flex(column,normal, normal);
     min-height: 100%;
   }
+.picture{
+width: 500px;
+height: 500px;
+align-self: center;
+padding-right: 50px;
+}
+.section{
+  .Flex(column, normal, normal);
+  .courseOfCurrency{
+    .Flex(column, center, center)
+  }
+  .current_date{
+    font-size: 30px;
+    
+  }
+}
+.gridContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+p{
+  border: 2px solid red;
+}
+p:first-child{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: center;
+}
+
+}
