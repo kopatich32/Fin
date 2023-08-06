@@ -1,34 +1,34 @@
-.Flex(@dir, @just, @align){
+@mixin Flex($dir, $just, $align){
   display: flex;
-  flex-direction: @dir;
-  justify-content: @just;
-  align-items: @align;
+  flex-direction: $dir;
+  justify-content: $just;
+  align-items: $align;
 }
 
-.Font(@url, @weight){
+@mixin Font($url, $weight){
   src: local("Inter");
-  src: url(@url);
+  src: url($url);
   font-family: "Inter";
-  font-weight: @weight;
+  font-weight: $weight;
 }
 
-.size(@width, @height){
-  width: @width;
-  height: @height;
+@mixin size($width, $height){
+  width: $width;
+  height: $height;
 }
-@footerColor: #CBECFF;
-@textColor: #0962E8;
+$footerColor: #CBECFF;
+$textColor: #0962E8;
 @font-face {
-  .Font("Inter_Fonts/Inter-Light.ttf", 200);
-}
-@font-face {
-  .Font("Inter_Fonts/Inter-Medium.ttf", 400);
+  @include Font("Inter_Fonts/Inter-Light.ttf", 200);
 }
 @font-face {
- .Font("Inter_Fonts/Inter-SemiBold.ttf", 700);
+  @include Font("Inter_Fonts/Inter-Medium.ttf", 400);
 }
 @font-face {
-.Font("Inter_Fonts/Inter-Bold.ttf", 900);
+ @include Font("Inter_Fonts/Inter-SemiBold.ttf", 700);
+}
+@font-face {
+@include Font("Inter_Fonts/Inter-Bold.ttf", 900);
 }
 
 * {
@@ -43,31 +43,39 @@ html, body {
   width: 100vw;
 }
 header{
-  .Flex(row, space-evenly, center);
+  @include Flex(row, space-evenly, center);
   height: 70px;
-  background-color: @footerColor - #111111;
+  background-color: $footerColor - #111111;
   a{
     text-decoration: none;
     color: inherit;
     border-bottom: 0 solid transparent;
     transition: .1s;
     padding: 5px ;
-    &:hover{
+    &:hover:not(&:last-child){
       border-bottom: 3px solid black;
       transition: all .1s;
+    }
+    .account{
+      @include size(40px,40px);
+
+      img{
+        object-fit: contain;
+        @include size(100%,100%);
+      }
     }
   }
 }
 .container {
-  .size(100%, 100%);
+  @include size(100%, 100%);
   background-color: #CBECFF;
   padding-left: 20px;
 }
 header .links{
-.Flex(row, space-around, center);
-.size(auto, 100px);
+@include Flex(row, space-around, center);
+@include size(auto, 100px);
 position: sticky;
-background-color: @footerColor - #222222;
+background-color: $footerColor - #222222;
 font-size: 30px;
 color: #29374E;
 font-weight: 700;
@@ -91,7 +99,7 @@ cursor: pointer;
   font-size: 64px;
   line-height: 130%;
   font-weight: 700;
-  color: @textColor;
+  color: $textColor;
   background-color: #fff;
   border-radius: 20px;
   padding: 0 7px 0 7px;
@@ -113,14 +121,14 @@ cursor: pointer;
   }
 }
 section {
-  .Flex(row-reverse, normal, center);
+  @include Flex(row-reverse, normal, center);
   width: 100%;
   height: 678px;
 }
 
 .order {
-.size(200px, 63px);
-  background-color: @textColor;
+  @include size(200px, 63px);
+  background-color: $textColor;
   border-radius: 12px;
   border: none;
   color: #ffffff;
@@ -152,14 +160,14 @@ section {
 }
 
 .bottom_part_of_main {
-  .Flex(row, center, normal);
+  @include Flex(row, center, normal);
   position: relative;
   top: 36px;
 }
 
 .bottom_part_of_main > div {
-  .Flex(row, normal, center);
-  .size(241px, 118px);
+  @include Flex(row, normal, center);
+  @include size(241px, 118px);
   margin-right: 3%;
   background-color: #ffffff;
   font-weight: 400;
@@ -169,8 +177,8 @@ section {
 }
 
 .background_icons {
-  .Flex(row, center, center);
-  .size(40px, 40px);
+  @include Flex(row, center, center);
+  @include size(40px, 40px);
   align-self: flex-start;
   margin-top: 10%;
   background-color: #EFF9FF;
@@ -178,7 +186,7 @@ section {
 }
 
 .bottom_part_of_main > div > img {
-  .size(20px, 20px);
+  @include size(20px, 20px);
 }
 
 .bottom_part_of_main p {
@@ -194,25 +202,27 @@ h2 {
 }
 
 .text_color {
-  color: @textColor;
+  color: $textColor;
 }
 
 .row_of_risk {
-  .Flex(row, center, normal);
+  @include Flex(row, center, normal);
   font-weight: 400;
 }
 
 .left_block {
-  .Flex(row, normal, flex-start);
-  .size(502px, 328px);
+  @include Flex(row, normal, flex-start);
+  @include size(502px, 328px);
   background-color: #E9F6FF;
   border-radius: 30px;
   margin-right: 20px;
 }
 
 .left_block p:first-child {
-  font-weight: bold;
-  font-size: 20px;
+  font:{
+    weight: bold;
+    size: 20px;
+  }
 }
 
 .left_text p:first-child {
@@ -220,13 +230,13 @@ h2 {
 }
 
 .left_text {
-  .Flex(column, normal, normal);
+  @include Flex(column, normal, normal);
   margin: 37px 0 0 20px;
 }
 
 .right_block {
-  .Flex(row, space-between, normal);
-  .size(502px, 328px);
+  @include Flex(row, space-between, normal);
+  @include size(502px, 328px);
   background-color: #E9F6FF;
   border-radius: 30px;
 }
@@ -247,7 +257,7 @@ p:first-child {
 }
 
 .right_text {
-  .Flex(column, normal, normal);
+  @include Flex(column, normal, normal);
   margin-left: 20px;
   margin-top: 37px;
 }
@@ -257,7 +267,7 @@ main {
 }
 
 .bottom_part {
-  .Flex(row, center, normal);
+  @include Flex(row, center, normal);
   width: 100%;
   margin-bottom: 200px;
 }
@@ -286,12 +296,12 @@ main {
 
 .left_side, .right_side{
   div{
-    .size(231px, 100px);
+    @include size(231px, 100px);
   }
 }
 
 .right_of_bottom {
-  .Flex(row, normal, normal)
+  @include Flex(row, normal, normal)
 }
 
 .right_of_bottom span {
@@ -365,11 +375,11 @@ main {
 
   header{
     position: absolute;
-      .Flex(column, center, flex-start);
+    @include Flex(column, center, flex-start);
     height: 100vh;
     width: 70%;
     left: -70%;
-    background-color: @footerColor - #111;
+    background-color: $footerColor - #111;
     z-index:999999999;
     transition: 1s;
   }
@@ -415,7 +425,7 @@ main {
   }
 
   .phone {
-    .size(100%, 423px);
+    @include size(100%, 423px);
     position: relative;
     background-image: url("telephone.png");
     background-size: 120%;
@@ -424,7 +434,7 @@ main {
   }
 
   section {
-    .Flex(column, normal, normal);
+    @include Flex(column, normal, normal);
     overflow: hidden;
     height: auto;
   }
@@ -468,15 +478,15 @@ main {
     font-size: 24px;
   }
   .row_of_risk{
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
   }
   .left_block{
-    .size(340px, 215px);
+    @include size(340px, 215px);
     margin-bottom: 30px;
     margin-right: 0;
   }
   .right_block{
-    .size(344px, 215px);
+    @include size(344px, 215px);
 
   }
 
@@ -485,12 +495,12 @@ main {
   }
 
   .left_block img, .right_block img{
-    .size(142px, 190px);
+    @include size(142px, 190px);
     display: flex;
     align-self: flex-end;
   }
   .bottom_part{
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
   }
 
   .left_of_bottom{
@@ -500,17 +510,17 @@ main {
   }
 
   .right_of_bottom{
-    .Flex(row, center, normal);
+    @include Flex(row, center, normal);
     padding: 0 10px 0 10px;
   }
 
   .left_side{
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
     width: 50%;
     margin-right: 10px;
   }
   .right_side{
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
     width: 50%;
   }
 
@@ -520,8 +530,8 @@ main {
      font-size: 14px;
    }
   .left_side > div, .right_side > div{
-    .Flex(column, normal, center);
-    .size(auto , auto);
+    @include Flex(column, normal, center);
+    @include size(auto , auto);
     box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     font-size: 14px;
@@ -574,7 +584,7 @@ main {
   }
 
   .phone {
-    .size(100%, 423px);
+    @include size(100%, 423px);
     position: relative;
     background-size: 120%;
     background-repeat: no-repeat;
@@ -582,7 +592,7 @@ main {
   }
 
   section {
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
     overflow: hidden;
     height: auto;
   }
@@ -597,17 +607,17 @@ main {
   }
 
   .row_of_risk {
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
   }
 
   .left_block {
-    .size(auto, 268px);
+    @include size(auto, 268px);
     margin: 0 0 20px;
     max-width: 600px;
   }
 
   .right_block {
-    .size(auto, 268px);
+    @include size(auto, 268px);
     max-width: 600px;
   }
 
@@ -624,7 +634,7 @@ main {
   }
 
   .left_of_bottom {
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
     order: 1;
     margin-right: 0;
     width: auto;
@@ -636,8 +646,8 @@ main {
   }
 
   .left_side > div, .right_side > div {
-    .Flex(column, normal, center);
-    .size(auto, auto);
+    @include Flex(column, normal, center);
+    @include size(auto, auto);
     box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     font-size: 14px;
@@ -647,13 +657,13 @@ main {
   }
 
   .left_side {
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
     width: 50%;
     margin-right: 10px;
   }
 
   .right_side {
-    .Flex(column, normal, center);
+    @include Flex(column, normal, center);
     width: 50%;
   }
 }
@@ -665,8 +675,8 @@ main {
 
 
 footer{
-  .Flex(row, space-between, center);
-  background-color: @footerColor;
+  @include Flex(row, space-between, center);
+  background-color: $footerColor;
   padding: 0 2% 0 2%;
   height: 100px;
   
@@ -674,12 +684,12 @@ footer{
 
 // Anchor at JavaScript
 .anchor_top{
-  .Flex(row, normal, center);
+  @include Flex(row, normal, center);
   .footRight{
     margin-right: 50px;
   }
 .icon{
   font-size: 50px;
 }
-
 }
+// Registration form

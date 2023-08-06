@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="courses.less">
+    <link rel="stylesheet" href="courses.scss">
     <link rel="stylesheet" href="courses.css">
-    <link rel="stylesheet" href="startPage.less">
+    <link rel="stylesheet" href="startPage.scss">
     <link rel="stylesheet" href="startPage.css">
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/less"></script>-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Курсы валют</title>
@@ -34,6 +34,8 @@
         <a href="">
             <div class="about">О нас</div>
         </a>
+        <a href=""> <div class="account"><img src="account_icon.svg.png" alt="Profile"></div></a>
+
     </header>
     <!-- Hamburger menu -->
     <div class="menu">
@@ -57,20 +59,20 @@
         
         <div class="gridContainer">
             <p>г. Калуга ул. Кирова д. 1</p>
-            <p>Покупка</p>
+            <p class="buy">Покупка</p>
             <p></p>
-            <p>Продажа</p>
+            <p class="sell">Продажа</p>
             <p>27.10</p>
-            <p>Us flag</p>
+            <p><img src="Usa_flag.svg" alt="USA"></p>
             <p>24.83</p>
             <p>27.50</p>
-            <!-- <p>euro flag</p> -->
-            <img src="Euro.svg" alt="Euro">
+            <p><img src="Euro.png" alt="Euro"></p>
             <P>24.75</P>
         </div>
     </div>
     <footer>
         <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
+        <p> Связаться с нами <a href="tel:8 (123)-456-78-90">8 (123)-456-78-90</a></p>
 
         <div class="anchor_top">
             <p class="footRight">Разрабатано в 2023 г.</p>
@@ -80,9 +82,23 @@
         </div>
     </footer>
 </div>
+<div class="registration_wrapper">
+    <form action="" name="registration">
+        <p>Войдите в свой профиль</p>
+        <div class="insert_field">
+            <div class="top">
+                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Фамилия"></div>
+            <div class="bottom">
+                <input type="password" placeholder="Пароль">
+                <input type="email" placeholder="Почта"></div>
+        </div>
+        <button>Войти</button>
+    </form>
+</div>
+
     <script src="scripts.js"></script>
     <!-- https://www.vtb.ru/personal/platezhi-i-perevody/obmen-valjuty/ -->
-
 
     https://codepen.io/ahmadbassamemran/pen/VQwPGr
     https://codepen.io/alvarotrigo/pen/OJzYrQZ

@@ -1,0 +1,153 @@
+@mixin Flex($dir, $just, $align){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+  }
+  
+  @mixin size($width, $height){
+    width: $width;
+    height: $height;
+  }
+  $footerColor: #CBECFF;
+  $textColor: #0962E8;
+  $mainTextColor: rgb(47, 52, 65);
+
+body, html{
+  width: 100%;
+  height: 100%;
+}
+.logo {
+    display: flex;
+    min-width: 100%;
+    margin-bottom: 3%;
+  }
+.fin2 {
+    font-size: 34px;
+    line-height: 130%;
+    font-weight: 700;
+    color: #29374E;
+  }
+  
+  .kit2 {
+    font-size: 34px;
+    line-height: 130%;
+    font-weight: 700;
+    color: $textColor;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 7px 0 7px;
+    margin-left: 3%;
+  
+  }
+  header{
+    a:nth-child(2){
+        border-bottom: 3px solid black;
+    }
+  }
+  main{
+    flex: 1 1 auto;
+    @include Flex(row, normal, normal);
+    margin-bottom: 0 !important;
+    .text{
+      @include Flex(column, center, flex-start);
+      margin-left: 10%;
+      h1{
+        font-size: 54px;
+        margin-bottom: 2%;
+color: $mainTextColor;
+ }
+      p{
+        font-size: 28px;
+        width: 40%;
+        color: $mainTextColor;
+      }
+    }
+  }
+  .cont{
+    @include Flex(column,normal, normal);
+    min-height: 100%;
+  }
+.picture{
+width: 500px;
+height: 500px;
+align-self: center;
+padding-right: 50px;
+}
+.section{
+  width: 60%;
+  align-self: center;
+  margin-bottom: 10%;
+  //@include Flex(column, normal, normal);
+  .courseOfCurrency{
+    @include Flex(column, center, center)
+  }
+  .current_date{
+    font-size: 30px;
+  }
+}
+.courseOfCurrency{
+  h2{
+    margin: 0;
+  }
+}
+.gridContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+p{
+  @include Flex(row, center, center);
+  border: 1px solid $textColor;
+  height: 50px;
+}
+  .buy,.sell{
+    background-color: $footerColor -#111111;
+  }
+  img{
+    @include size(50px, 50px);
+  }
+p:first-child{
+  grid-column:{
+    start: 1;
+    end: 4;
+  }
+
+  display: flex;
+  justify-content: center;
+}
+}
+// Registration form
+.registration_wrapper{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  @include size(100vw,100vh);
+  z-index: 10;
+  backdrop-filter: blur(2px);
+
+  form{
+    @include size(450px, 240px);
+    @include Flex(column, center,center);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 10px 2px black;
+    p:first-child{
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .insert_field{
+      .top{
+        input:first-child{
+          margin-bottom: 14px;
+        }
+      }
+      .top > input, .bottom > input{
+          @include size(210px, 30px);
+      }
+    }
+  }
+
+}
