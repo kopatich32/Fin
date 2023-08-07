@@ -1,6 +1,6 @@
 // Registration form
 .registration_wrapper{
-  display: none;
+  //display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -22,16 +22,26 @@
       margin-bottom: 20px;
       font-size: 24px;
     }
-    button{
-      @include Flex(column, center, center);
-      padding: 10px;
-      height: 30px;
-      background-color: $textColor;
-      border-radius: 12px;
-      border: none;
-      color: #ffffff;
+    .form_buttons {
+      @include Flex(row, cpase-evenly, center);
+button:first-child{
+  margin-right: 30px;
+  font-size: 1.2em;
+}
+      button {
+        @include Flex(column, center, center);
+        padding: 10px;
+        height: 30px;
+        background-color: $textColor;
+        border-radius: 12px;
+        border: none;
+        color: #ffffff;
+      }
     }
     .insert_field{
+      .top{
+        display: none;
+      }
       .top > input, .bottom > input{
         @include size(210px, 30px);
         margin-bottom: 25px;
@@ -39,4 +49,7 @@
     }
   }
 
+}
+.display{
+  display: block;
 }
