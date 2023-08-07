@@ -1,0 +1,42 @@
+// Registration form
+.registration_wrapper{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  @include size(100vw,100vh);
+  z-index: 9999999999;
+  backdrop-filter: blur(2px);
+
+  form{
+    @include size(450px, 240px);
+    @include Flex(column, center,center);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 10px 2px black;
+    p:first-child{
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    button{
+      @include Flex(column, center, center);
+      padding: 10px;
+      height: 30px;
+      background-color: $textColor;
+      border-radius: 12px;
+      border: none;
+      color: #ffffff;
+    }
+    .insert_field{
+      .top > input, .bottom > input{
+        @include size(210px, 30px);
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+}

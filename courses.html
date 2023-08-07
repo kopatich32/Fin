@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="courses.css">
     <link rel="stylesheet" href="startPage.scss">
     <link rel="stylesheet" href="startPage.css">
-<!--    <script src="https://cdn.jsdelivr.net/npm/less"></script>-->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Курсы валют</title>
 </head>
 
-<body>
+<body id="top">
 <div class="cont">
     <header>
         <a href="index.html" title="на главную страницу">
@@ -34,7 +32,7 @@
         <a href="">
             <div class="about">О нас</div>
         </a>
-        <a href=""> <div class="account"><img src="account_icon.svg.png" alt="Profile"></div></a>
+        <a href="#"> <div class="account"><img src="account_icon.svg.png" alt="Profile"></div></a>
 
     </header>
     <!-- Hamburger menu -->
@@ -49,7 +47,7 @@
             <p>Выгодный обмен валют от банка. Информация о курсах обмена иностранных валют является справочной и
                 может меняться в течение дня.</p>
         </div>
-        <img class="picture" src="dollar_euro.jpg" alt="dollar/euro">
+        <div class="img"><img class="picture" src="dollar_euro.jpg" alt="dollar/euro"></div>
     </main>
     <div class="section">
         <div class="courseOfCurrency">
@@ -73,9 +71,8 @@
     <footer>
         <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
         <p> Связаться с нами <a href="tel:8 (123)-456-78-90">8 (123)-456-78-90</a></p>
-
+        <p class="footRight">Разрабатано в 2023 г.</p>
         <div class="anchor_top">
-            <p class="footRight">Разрабатано в 2023 г.</p>
             <a href="#top" title="наверх">
                 <div id="icon" class="material-symbols-outlined icon">arrow_circle_up</div>
             </a>
@@ -83,17 +80,17 @@
     </footer>
 </div>
 <div class="registration_wrapper">
-    <form action="" name="registration">
-        <p>Войдите в свой профиль</p>
+    <form action="register.php" name="registration" method="post">
+        <p>Регистрация</p>
         <div class="insert_field">
             <div class="top">
-                <input type="text" placeholder="Имя">
-                <input type="text" placeholder="Фамилия"></div>
+                <input type="text" name="name" placeholder="Имя">
+                <input type="text" name="lastname" placeholder="Фамилия"></div>
             <div class="bottom">
-                <input type="password" placeholder="Пароль">
-                <input type="email" placeholder="Почта"></div>
+                <input type="password" name="password" placeholder="Пароль">
+                <input type="email" name="email" placeholder="Почта"></div>
         </div>
-        <button>Войти</button>
+        <button type="submit">Зарегистрироваться</button>
     </form>
 </div>
 
@@ -109,11 +106,15 @@
     let currentValue = document.querySelector('.current_date')
     let date = new Date;
     let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-    function getMonth (date){
-return allMonth[date.getMonth()]
+    function getMonth (month){
+return allMonth[month.getMonth()]
     }
 let thisYear = date.getFullYear();
 let thisDay = date.getDate();
 currentValue.innerHTML = thisYear + '-' + getMonth(date) + '-' + thisDay
 </script>
+
+
+
+
 </html>

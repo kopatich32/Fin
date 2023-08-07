@@ -38,7 +38,7 @@ header {
   header a {
     text-decoration: none;
     color: inherit;
-    border-bottom: 0 solid transparent;
+    border-bottom: 3px solid transparent;
     transition: .1s;
     padding: 5px; }
     header a:hover:not(header a:last-child) {
@@ -302,7 +302,7 @@ main {
     right: 5%;
     height: 35px;
     padding-top: 14px;
-    z-index: 9999999999;
+    z-index: 99;
     cursor: pointer; }
     .menu .burger {
       position: relative; }
@@ -347,7 +347,7 @@ main {
     width: 70%;
     left: -70%;
     background-color: #badbee;
-    z-index: 999999999;
+    z-index: 999;
     transition: 1s; }
 
   .container {
@@ -364,7 +364,7 @@ main {
     background-image: url("telephone.png");
     background-size: 120%;
     background-repeat: no-repeat;
-    z-index: 1000; }
+    z-index: 9999; }
 
   section {
     display: flex;
@@ -379,7 +379,7 @@ main {
     width: 100%;
     margin-top: -66px;
     margin-left: 0;
-    z-index: 3000;
+    z-index: 99999;
     padding: 0 10px 0 10px; }
 
   .content p {
@@ -508,7 +508,7 @@ main {
   .content {
     width: 90%;
     margin-left: 0;
-    z-index: 3001; }
+    z-index: 999999; }
 
   .content p {
     font-size: 16px;
@@ -612,6 +612,17 @@ main {
     justify-content: normal;
     align-items: center;
     width: 50%; } }
+@media screen and (max-width: 821px) {
+  footer {
+    display: grid !important;
+    grid-template-columns: 2fr;
+    grid-template-rows: 2fr; }
+    footer div {
+      grid-column-start: 2; }
+    footer p:nth-child(2) {
+      grid-column-start: 1; }
+    footer p:nth-child(3) {
+      grid-column-start: 1; } }
 footer {
   display: flex;
   flex-direction: row;
@@ -630,5 +641,47 @@ footer {
     margin-right: 50px; }
   .anchor_top .icon {
     font-size: 50px; }
+
+.registration_wrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999999999;
+  backdrop-filter: blur(2px); }
+  .registration_wrapper form {
+    width: 450px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 10px 2px black; }
+    .registration_wrapper form p:first-child {
+      margin-bottom: 20px;
+      font-size: 24px; }
+    .registration_wrapper form button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      height: 30px;
+      background-color: #0962E8;
+      border-radius: 12px;
+      border: none;
+      color: #ffffff; }
+    .registration_wrapper form .insert_field .top > input, .registration_wrapper form .insert_field .bottom > input {
+      width: 210px;
+      height: 30px;
+      margin-bottom: 25px; }
 
 /*# sourceMappingURL=startPage.css.map */

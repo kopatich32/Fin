@@ -1,10 +1,9 @@
 //Anchor animation
 
-let arrow = document.querySelector('a[href*="#"]')
+let arrow = document.querySelector('a[href="#top"]')
     arrow.addEventListener('click', function(event){
     event.preventDefault();
-    let blockID = arrow.getAttribute('href')
-    document.querySelector(blockID).scrollIntoView({
+    document.querySelector('#top').scrollIntoView({
         behavior: "smooth",
         block: "start",
     })
@@ -14,7 +13,6 @@ let arrow = document.querySelector('a[href*="#"]')
 let wrapperBurger = document.querySelector('.menu')
 let hamburgerButton = document.querySelector('.burger')
 let verticalMenu = document.querySelector('header')
-
 
 
 // document.addEventListener('click', function(event){
@@ -27,7 +25,6 @@ let verticalMenu = document.querySelector('header')
 //     }
 //     }
 // })
-
 
 wrapperBurger.addEventListener('click', function(event){
     let has = hamburgerButton.classList.toggle('choose')
@@ -45,3 +42,21 @@ function notMenu(e){
         hamburgerButton.classList.remove('choose')
     }
 }
+
+// Registration form
+let form = document.forms.registration
+let wrapperForm = document.querySelector('.registration_wrapper')
+let accBtn = document.querySelector('.account')
+
+document.addEventListener('click', (e)=>{
+    if(accBtn.contains(e.target)){
+        wrapperForm.style.display = 'block'
+    }else if(!form.contains(e.target)){
+        wrapperForm.style.display = 'none'
+    }
+})
+
+
+
+
+

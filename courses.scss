@@ -52,14 +52,16 @@ body, html{
     .text{
       @include Flex(column, center, flex-start);
       margin-left: 10%;
+      width: 50%;
       h1{
+        text-align: center;
         font-size: 54px;
         margin-bottom: 2%;
 color: $mainTextColor;
  }
       p{
         font-size: 28px;
-        width: 40%;
+        //width: 40%;
         color: $mainTextColor;
       }
     }
@@ -72,7 +74,7 @@ color: $mainTextColor;
 width: 500px;
 height: 500px;
 align-self: center;
-padding-right: 50px;
+  object-fit: contain;
 }
 .section{
   width: 60%;
@@ -116,38 +118,41 @@ p:first-child{
   justify-content: center;
 }
 }
-// Registration form
-.registration_wrapper{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  @include size(100vw,100vh);
-  z-index: 10;
-  backdrop-filter: blur(2px);
+@import "_form";
 
-  form{
-    @include size(450px, 240px);
-    @include Flex(column, center,center);
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 1px 1px 10px 2px black;
-    p:first-child{
-      margin-bottom: 20px;
-      font-size: 24px;
+
+
+@media screen and (max-width: 800px){
+  .picture{
+    display: none;
+  }
+.text{
+  margin-left: 0 !important;
+  width: 100% !important;
+  padding: 2%;
+  h1{
+    font-size: 44px;
+  }
+  p{
+    font-size: 22px;
+  }
+}
+  main{
+    width: 100%;
+    @include Flex(column, normal,center);
+  }
+   footer{
+display: grid !important;
+    grid-template-columns:2fr;
+    grid-template-rows: 2fr;
+div{
+grid-column-start: 2;
+}
+    p:nth-child(2){
+      grid-column-start: 1;
     }
-    .insert_field{
-      .top{
-        input:first-child{
-          margin-bottom: 14px;
-        }
-      }
-      .top > input, .bottom > input{
-          @include size(210px, 30px);
-      }
+    p:nth-child(3){
+      grid-column-start: 1;
     }
   }
-
 }
