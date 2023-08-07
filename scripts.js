@@ -35,7 +35,7 @@ wrapperBurger.addEventListener('click', function(event){
     event.stopPropagation()
 })
 
-document.addEventListener('click', notMenu)
+document.onclick = notMenu
 function notMenu(e){
     if(!verticalMenu.contains(e.target)){
         verticalMenu.style.left = null
