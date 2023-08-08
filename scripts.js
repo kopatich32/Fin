@@ -48,7 +48,8 @@ let form = document.forms.registration;
 let wrapperForm = document.querySelector('.registration_wrapper');
 let accBtn = document.querySelector('.account');
 let regButton = document.querySelector('button[name="sign_in"]')
-console.log(regButton)
+let regField = document.querySelector('.top')
+let loginBtn = document.querySelector('button[name="login"]')
 
 document.addEventListener('click', (e)=>{
     if(accBtn.contains(e.target)){
@@ -56,16 +57,17 @@ document.addEventListener('click', (e)=>{
     }else if(!form.contains(e.target)){
         wrapperForm.style.display = 'none'
     }
+    else if(regButton.contains(e.target)){
+        document.querySelector('form p').innerHTML = 'Регистрация';
+        regField.style.display = 'block'
+        regButton.innerHTML = 'Зарегистрироваться'
+        loginBtn.innerText = 'Авторизоваться'
+        if(loginBtn.contains(e.target)){
+            regField.style.display = 'none'
+        }
+    }
 })
 
-// Registration part
-regButton.addEventListener('click', function (){
-    document.querySelector('form p').innerHTML = 'Регистрация';
-    let elem = document.querySelector('.top')
-    console.log(elem)
-    elem.style.display = null
-    elem.classList.add('display')
-})
 
 
 

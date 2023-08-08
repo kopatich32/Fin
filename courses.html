@@ -80,7 +80,7 @@
     </footer>
 </div>
 <div class="registration_wrapper">
-    <form name="registration" method="post">
+    <form name="registration">
         <p>Войти в профиль</p>
         <div class="insert_field">
             <div class="top">
@@ -92,8 +92,8 @@
                 <input type="email" name="email" placeholder="Почта"></div>
         </div>
         <div class="form_buttons">
-            <button name="login" type="submit">Войти</button>
-            <button name="sign_in" type="submit">Нет аккаунта?</button>
+            <button name="login">Войти</button>
+            <button name="sign_in" >Нет аккаунта?</button>
         </div>
     </form>
 </div>
@@ -104,19 +104,20 @@
     https://codepen.io/ahmadbassamemran/pen/VQwPGr
     https://codepen.io/alvarotrigo/pen/OJzYrQZ
 
-</body>
-
 <script type="module">
     let currentValue = document.querySelector('.current_date')
     let date = new Date;
     let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
     function getMonth (month){
-return allMonth[month.getMonth()]
+        return allMonth[month.getMonth()]
     }
-let thisYear = date.getFullYear();
-let thisDay = date.getDate();
-currentValue.innerHTML = thisYear + '-' + getMonth(date) + '-' + thisDay
+    let thisYear = date.getFullYear();
+    let thisDay = date.getDate();
+    currentValue.innerHTML = thisYear + '-' + getMonth(date) + '-' + thisDay
 </script>
+</body>
+
+
 
 
 
