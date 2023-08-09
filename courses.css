@@ -146,7 +146,7 @@ main {
         color: #ffffff;
         cursor: pointer; }
     .registration_wrapper form .insert_field .top {
-      display: none; }
+      visibility: hidden; }
     .registration_wrapper form .insert_field .top > input, .registration_wrapper form .insert_field .bottom > input {
       width: 210px;
       height: 30px;

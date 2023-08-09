@@ -58,12 +58,13 @@ document.addEventListener('click', (e)=>{
         wrapperForm.style.display = 'none'
     }
     else if(regButton.contains(e.target)){
+        e.preventDefault()
         document.querySelector('form p').innerHTML = 'Регистрация';
-        regField.style.display = 'block'
+        regField.style.visibility = 'visible'
         regButton.innerHTML = 'Зарегистрироваться'
         loginBtn.innerText = 'Авторизоваться'
-        if(loginBtn.contains(e.target)){
-            regField.style.display = 'none'
+        if(loginBtn.contains(e.target) && loginBtn.innerText === 'Авторизоваться'){
+            regField.style.visibility = 'hidden'
         }
     }
 })

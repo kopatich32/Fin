@@ -42,7 +42,7 @@ button:first-child{
     }
     .insert_field{
       .top{
-        display: none;
+        visibility: hidden;
       }
       .top > input, .bottom > input{
         @include size(210px, 30px);

@@ -127,17 +127,21 @@
     </footer>
 <!--Form-->
     <div class="registration_wrapper">
-        <form action="register.php" name="registration" method="post">
+        <form name="registration">
             <p>Регистрация</p>
             <div class="insert_field">
                 <div class="top">
                     <input type="text" name="name" placeholder="Имя">
-                    <input type="text" name="lastname" placeholder="Фамилия"></div>
+                    <input type="text" name="lastname" placeholder="Фамилия">
+                </div>
                 <div class="bottom">
                     <input type="password" name="password" placeholder="Пароль">
                     <input type="email" name="email" placeholder="Почта"></div>
             </div>
-            <button type="submit">Зарегистрироваться</button>
+            <div class="form_buttons">
+                <button name="login">Войти</button>
+                <button name="sign_in" >Нет аккаунта?</button>
+            </div>
         </form>
     </div>
 
