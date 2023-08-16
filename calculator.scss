@@ -1,0 +1,24 @@
+@mixin Flex($direction, $just, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+}
+body{
+@include Flex(column, center, normal);
+  footer{
+    margin-top: auto;
+  }
+}
+header{
+  a:nth-child(2){
+    border-bottom: none;
+  }
+  a:nth-child(3){
+    border-bottom: 3px solid black;
+  }
+}
+main{
+  flex: none;
+  @include Flex (column, normal, center);
+}
