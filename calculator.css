@@ -16,6 +16,67 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: normal;
-  align-items: center; }
+  align-items: center;
+  border: 1px solid rgba(128, 128, 128, 0.79);
+  border-radius: 20px;
+  margin: 20px; }
+  main .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: normal; }
+  main .deposit_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: normal;
+    width: 100%; }
+  main .result_of_deposit {
+    width: 500px;
+    height: 350px;
+    background-color: rgba(199, 199, 199, 0.32);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center; }
+    main .result_of_deposit p:first-child {
+      font-size: 24px; }
+    main .result_of_deposit p:nth-child(2) {
+      font-size: 48px; }
+    main .result_of_deposit .order {
+      margin-top: auto; }
+  main table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid rgba(189, 182, 182, 0.79);
+    margin-top: 20px; }
+    main table tr > td:first-child {
+      height: 50px;
+      font-size: 18px; }
+    main table tr > td:last-child {
+      font-size: 30px;
+      text-align: right; }
+
+.value_of_cash {
+  width: 500px;
+  margin-bottom: 20px; }
+  .value_of_cash input {
+    height: 50px;
+    width: 100%;
+    border: 1px solid rgba(189, 182, 182, 0.79); }
+
+.date .date_wrapper {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: normal;
+  border: 1px solid rgba(189, 182, 182, 0.79); }
+.date .choose_months {
+  padding-left: 10px; }
+.date .open_close {
+  margin-left: auto; }
 
 /*# sourceMappingURL=calculator.css.map */

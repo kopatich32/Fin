@@ -1,24 +1,115 @@
-@mixin Flex($direction, $just, $align){
+@mixin Flex($direction, $just, $align) {
   display: flex;
   flex-direction: $direction;
   justify-content: $just;
   align-items: $align;
 }
-body{
-@include Flex(column, center, normal);
-  footer{
+
+body {
+  @include Flex(column, center, normal);
+
+  footer {
     margin-top: auto;
   }
 }
-header{
-  a:nth-child(2){
+
+header {
+  a:nth-child(2) {
     border-bottom: none;
   }
-  a:nth-child(3){
+
+  a:nth-child(3) {
     border-bottom: 3px solid black;
   }
 }
-main{
+
+main {
   flex: none;
-  @include Flex (column, normal, center);
+  @include Flex(column, normal, center);
+  border: 1px solid rgba(128, 128, 128, 0.79);
+  border-radius: 20px;
+  margin: 20px;
+//ul{
+//  list-style: none;
+//  box-shadow: 1px 1px 20px rgba(111, 110, 110, 0.78);
+//  li{
+//    height: 30px;
+//    width: 700px;
+//    padding-left: 10px;
+//    border: 1px solid rgba(189, 182, 182, 0.79);
+//  }
+//  li:not(li:first-child){
+//    display: none;
+//  }
+//}
+  .row{
+    @include Flex(column,normal, normal);
+  }
+  .deposit_wrapper{
+    @include Flex(row,space-around, normal);
+    width: 100%;
+  }
+  .result_of_deposit {
+    p:first-child {
+      font-size: 24px;
+    }
+
+    p:nth-child(2) {
+      font-size: 48px;
+    }
+
+    width: 500px;
+    height: 350px;
+    background-color: rgba(199, 199, 199, 0.32);
+    border-radius: 20px;
+    padding: 20px;
+    @include Flex(column, normal, center);
+
+    .order {
+      margin-top: auto;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid rgba(189, 182, 182, 0.79);
+    margin-top: 20px;
+
+    tr > td:first-child {
+      height: 50px;
+      font-size: 18px;
+    }
+    tr > td:last-child{
+      font-size: 30px;
+      text-align: right;
+    }
+
+  }
+}
+
+.value_of_cash{
+  width: 500px;
+  margin-bottom: 20px;
+  input{
+    height: 50px;
+    width: 100%;
+    border: 1px solid rgba(189, 182, 182, 0.79);
+
+  }
+}
+.date{
+  .date_wrapper{
+    width: 500px;
+    @include Flex(row,normal,normal);
+    border: 1px solid rgba(189, 182, 182, 0.79);
+  }
+  .choose_months{
+    padding-left: 10px;
+
+  }
+  .open_close{
+    margin-left: auto;
+  }
+
 }

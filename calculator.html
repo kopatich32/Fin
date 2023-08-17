@@ -45,28 +45,71 @@
 <main>
     <h1>Вклад "Выгодный"</h1>
     <h3>Выгодная процентная ставка, при сумме вклада от 100 000 рублей</h3>
-    <button class="reg_deposit order">Оформить вклад</button>
     <div class="choose_percent">
         <p>Выгодный</p>
         <p class="value_of_revenue"></p>
     </div>
-    <div class="value_of_cash">
-        <p>Сумма от 100 000 р.</p>
-        <p class="num"></p>
-    </div>
-    <div class="date">
-        <p>Срок</p>
-        <input list="months">
-        <datalist id="months">
-            <option value="1 месяц">3,8%</option>
-            <option value="2 месяца">4,25%</option>
-            <option value="3 месяца">5,2%</option>
-            <option value="4 месяца">5,35%</option>
-            <option value="6 месяцев">5,45%</option>
-            <option value="1 год">6%</option>
-        </datalist>
 
+
+
+    <div class="deposit_wrapper">
+        <div class="row">
+            <div class="value_of_cash">
+                <p>Сколько вы хотите вложить</p>
+                <input type="text" name="num">
+                <p>от 100 000 ₽</p>
+            </div>
+            <div class="date">
+                <p>На срок</p>
+                <div class="date_wrapper">
+                    <p class="choose_months">1 месяц</p>
+                    <div class="open_close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                            <path fill-rule="evenodd"
+                                  d="M15.293 9.883a1 1 0 011.414 1.414L12 16.004l-4.707-4.707a1 1 0 011.414-1.414L12 13.176l3.293-3.293z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <!--        <ul>-->
+                <!--            <li>1 мес</li>-->
+                <!--            <li>2 мес</li>-->
+                <!--            <li>3 мес</li>-->
+                <!--            <li>4 мес</li>-->
+                <!--            <li>6 мес</li>-->
+                <!--            <li>1 год</li>-->
+                <!--            <li>1 год 12 мес</li>-->
+                <!--        </ul>-->
+            </div>
+        </div>
+
+        <div class="result_of_deposit">
+            <p>Накопление к такому-то числу</p>
+            <p>Total</p>
+            <table>
+                <tr>
+                    <td>Максимальная ставка</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <td>Вы заработаете</td>
+                    <td>100000000</td>
+                </tr>
+            </table>
+            <button class="reg_deposit order">Оформить вклад</button>
+        </div>
     </div>
+
+
+        <!--        <input list="months">-->
+<!--        <datalist id="months">-->
+<!--            <option value="1 месяц">3,8%</option>-->
+<!--            <option value="2 месяца">4,25%</option>-->
+<!--            <option value="3 месяца">5,2%</option>-->
+<!--            <option value="4 месяца">5,35%</option>-->
+<!--            <option value="6 месяцев">5,45%</option>-->
+<!--            <option value="1 год">6%</option>-->
+<!--        </datalist>-->
+
 </main>
     <footer>
         <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
