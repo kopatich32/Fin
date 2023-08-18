@@ -45,12 +45,6 @@
 <main>
     <h1>Вклад "Выгодный"</h1>
     <h3>Выгодная процентная ставка, при сумме вклада от 100 000 рублей</h3>
-    <div class="choose_percent">
-        <p>Выгодный</p>
-        <p class="value_of_revenue"></p>
-    </div>
-
-
 
     <div class="deposit_wrapper">
         <div class="row">
@@ -61,8 +55,19 @@
             </div>
             <div class="date">
                 <p>На срок</p>
+                <span class="span">saa</span>
                 <div class="date_wrapper">
-                    <p class="choose_months">1 месяц</p>
+                    <div class="choose_months">
+                        <div class="current_months">1 мес</div>
+                                <ul class="list">
+                                    <li value="5.8">1 мес</li>
+                                    <li value="11">2 мес</li>
+                                    <li value="10">3 мес</li>
+                                    <li value="9.5">4 мес</li>
+                                    <li value="9">6 мес</li>
+                                    <li value="8.4">1 год</li>
+                                </ul>
+                    </div>
                     <div class="open_close">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                             <path fill-rule="evenodd"
@@ -70,29 +75,21 @@
                         </svg>
                     </div>
                 </div>
-                <!--        <ul>-->
-                <!--            <li>1 мес</li>-->
-                <!--            <li>2 мес</li>-->
-                <!--            <li>3 мес</li>-->
-                <!--            <li>4 мес</li>-->
-                <!--            <li>6 мес</li>-->
-                <!--            <li>1 год</li>-->
-                <!--            <li>1 год 12 мес</li>-->
-                <!--        </ul>-->
+
             </div>
         </div>
 
         <div class="result_of_deposit">
-            <p>Накопление к такому-то числу</p>
-            <p>Total</p>
+            <p>К числу вы накопите</p>
+            <p class="final_sum">0</p>
             <table>
                 <tr>
                     <td>Максимальная ставка</td>
-                    <td>100%</td>
+                    <td class="percent"><pre> </pre></td>
                 </tr>
                 <tr>
                     <td>Вы заработаете</td>
-                    <td>100000000</td>
+                    <td class="income">100000000</td>
                 </tr>
             </table>
             <button class="reg_deposit order">Оформить вклад</button>

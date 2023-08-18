@@ -15,22 +15,32 @@ main {
   flex: none;
   display: flex;
   flex-direction: column;
-  justify-content: normal;
+  justify-content: center;
   align-items: center;
   border: 1px solid rgba(128, 128, 128, 0.79);
   border-radius: 20px;
-  margin: 20px; }
-  main .row {
-    display: flex;
-    flex-direction: column;
-    justify-content: normal;
-    align-items: normal; }
+  height: 70%;
+  margin: 55px; }
+  main h1 {
+    font-size: 40px; }
+  main h3 {
+    color: #262626;
+    margin-bottom: 30px; }
   main .deposit_wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: normal;
     align-items: normal;
     width: 100%; }
+    main .deposit_wrapper .row {
+      display: flex;
+      flex-direction: column;
+      justify-content: normal;
+      align-items: normal;
+      width: 500px;
+      margin: 0 auto; }
+    main .deposit_wrapper .date {
+      width: 500px; }
   main .result_of_deposit {
     width: 500px;
     height: 350px;
@@ -40,7 +50,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: normal;
-    align-items: center; }
+    align-items: center;
+    margin: 0 auto; }
     main .result_of_deposit p:first-child {
       font-size: 24px; }
     main .result_of_deposit p:nth-child(2) {
@@ -60,7 +71,6 @@ main {
       text-align: right; }
 
 .value_of_cash {
-  width: 500px;
   margin-bottom: 20px; }
   .value_of_cash input {
     height: 50px;
@@ -68,15 +78,44 @@ main {
     border: 1px solid rgba(189, 182, 182, 0.79); }
 
 .date .date_wrapper {
-  width: 500px;
   display: flex;
   flex-direction: row;
   justify-content: normal;
   align-items: normal;
-  border: 1px solid rgba(189, 182, 182, 0.79); }
+  border: 1px solid rgba(189, 182, 182, 0.79);
+  cursor: pointer; }
 .date .choose_months {
-  padding-left: 10px; }
+  position: relative;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal; }
+  .date .choose_months .current_months {
+    padding-left: 20px; }
+  .date .choose_months ul {
+    position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    display: none; }
+  .date .choose_months .switch {
+    display: block; }
+  .date .choose_months ul > li {
+    height: 50px;
+    border: 1px solid rgba(189, 182, 182, 0.79);
+    width: 500px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: normal;
+    padding-left: 20px;
+    background-color: #fff; }
+    .date .choose_months ul > li:hover {
+      background-color: #eeeeee; }
 .date .open_close {
   margin-left: auto; }
+  .date .open_close svg {
+    cursor: pointer; }
 
 /*# sourceMappingURL=calculator.css.map */

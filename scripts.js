@@ -43,6 +43,8 @@ function notMenu(e){
     }
 }
 
+
+
 // Log in form
 let form = document.forms.registration;
 let wrapperForm = document.querySelector('.registration_wrapper');
@@ -69,6 +71,45 @@ document.addEventListener('click', (e)=>{
     }
 })
 
+// Calculator page
+let ulArrow = document.querySelector('.date_wrapper');
+let curMonth = document.querySelector('.current_months')
+let ulList = document.querySelector('ul');
+let changedMonth;
+ulArrow.addEventListener('click', function(event){
+ulList.classList.toggle('switch')
+    if(event.target.tagName === 'LI'){
+        curMonth.innerText = event.target.innerHTML
+    }
+    event.stopPropagation()
+
+})
+document.onclick = function(e){
+    ulList.classList.remove('switch')
+}
+
+//Calculate deposit
+let insertedMoney = document.querySelector('input[name="num"]');// ввод суммы
+let totalSum = document.querySelector('.final_sum'); //общая сумма с доходом
+let percent = document.querySelector('.percent');// процент по ставке
+let income = document.querySelector('.income');// доход
+let currentPercent = document.querySelectorAll('.list > li')
+let span = document.querySelector('.span')
+let perc;
+insertedMoney.addEventListener('input', function(e){
+    let event = e.target.value;
+    let total = +event / 100 * 8;
+    income.innerText = total + '₽';
+    totalSum.innerText = +event + +total;
+})
+
+ulList.addEventListener('click', getValueOfLi)
+function getValueOfLi (e){
+  let attr =  e.target.getAttribute('value')
+    perc = attr;
+    span.innerText = perc
+    percent.innerText = perc + '%'
 
 
-
+    console.log(perc)
+}
