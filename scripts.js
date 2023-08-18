@@ -87,7 +87,6 @@ ulList.classList.toggle('switch')
 document.onclick = function(e){
     ulList.classList.remove('switch')
 }
-
 //Calculate deposit
 let insertedMoney = document.querySelector('input[name="num"]');// ввод суммы
 let totalSum = document.querySelector('.final_sum'); //общая сумма с доходом
