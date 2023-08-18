@@ -95,20 +95,23 @@ let income = document.querySelector('.income');// доход
 let currentPercent = document.querySelectorAll('.list > li')
 let span = document.querySelector('.span')
 let perc;
+ulList.addEventListener('click', getValueOfLi)
+function getValueOfLi (e){
+    let attr =  e.target.getAttribute('value')
+    perc = attr;
+    span.innerText = perc
+    percent.innerText = perc + '%'
+}
 insertedMoney.addEventListener('input', function(e){
+
+
     let event = e.target.value;
     let total = +event / 100 * 8;
     income.innerText = total + '₽';
     totalSum.innerText = +event + +total;
-})
-
-ulList.addEventListener('click', getValueOfLi)
-function getValueOfLi (e){
-  let attr =  e.target.getAttribute('value')
-    perc = attr;
-    span.innerText = perc
     percent.innerText = perc + '%'
 
 
-    console.log(perc)
-}
+})
+
+
