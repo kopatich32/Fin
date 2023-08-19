@@ -23,13 +23,13 @@ header {
   }
 }
 
-main {
-  flex: none;
+form[name="calculator"] {
+  //flex: none;
   @include Flex(column, center, center);
   border: 1px solid rgba(128, 128, 128, 0.79);
   border-radius: 20px;
-  height: 70%;
   margin: 55px;
+  padding: 50px;
   h1{
     font-size: 40px;
   }
@@ -157,6 +157,15 @@ color: #262626;
     svg{
       cursor: pointer;
     }
+  }
+
+}
+@media screen and (max-width: 1000px){
+.deposit_wrapper{
+  @include Flex(column !important, normal !important, center !important);
+}
+  .row{
+    margin-bottom: 50px !important;
   }
 
 }

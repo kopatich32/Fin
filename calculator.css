@@ -11,37 +11,36 @@ header a:nth-child(2) {
 header a:nth-child(3) {
   border-bottom: 3px solid black; }
 
-main {
-  flex: none;
+form[name="calculator"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(128, 128, 128, 0.79);
   border-radius: 20px;
-  height: 70%;
-  margin: 55px; }
-  main h1 {
+  margin: 55px;
+  padding: 50px; }
+  form[name="calculator"] h1 {
     font-size: 40px; }
-  main h3 {
+  form[name="calculator"] h3 {
     color: #262626;
     margin-bottom: 30px; }
-  main .deposit_wrapper {
+  form[name="calculator"] .deposit_wrapper {
     display: flex;
     flex-direction: row;
     justify-content: normal;
     align-items: normal;
     width: 100%; }
-    main .deposit_wrapper .row {
+    form[name="calculator"] .deposit_wrapper .row {
       display: flex;
       flex-direction: column;
       justify-content: normal;
       align-items: normal;
       width: 500px;
       margin: 0 auto; }
-    main .deposit_wrapper .date {
+    form[name="calculator"] .deposit_wrapper .date {
       width: 500px; }
-  main .result_of_deposit {
+  form[name="calculator"] .result_of_deposit {
     width: 500px;
     height: 350px;
     background-color: rgba(199, 199, 199, 0.32);
@@ -52,21 +51,21 @@ main {
     justify-content: normal;
     align-items: center;
     margin: 0 auto; }
-    main .result_of_deposit p:first-child {
+    form[name="calculator"] .result_of_deposit p:first-child {
       font-size: 24px; }
-    main .result_of_deposit p:nth-child(2) {
+    form[name="calculator"] .result_of_deposit p:nth-child(2) {
       font-size: 48px; }
-    main .result_of_deposit .order {
+    form[name="calculator"] .result_of_deposit .order {
       margin-top: auto; }
-  main table {
+  form[name="calculator"] table {
     width: 100%;
     border-collapse: collapse;
     border-top: 2px solid rgba(189, 182, 182, 0.79);
     margin-top: 20px; }
-    main table tr > td:first-child {
+    form[name="calculator"] table tr > td:first-child {
       height: 50px;
       font-size: 18px; }
-    main table tr > td:last-child {
+    form[name="calculator"] table tr > td:last-child {
       font-size: 30px;
       text-align: right; }
 
@@ -117,5 +116,15 @@ main {
   margin-left: auto; }
   .date .open_close svg {
     cursor: pointer; }
+
+@media screen and (max-width: 1000px) {
+  .deposit_wrapper {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: normal !important;
+    align-items: center !important; }
+
+  .row {
+    margin-bottom: 50px !important; } }
 
 /*# sourceMappingURL=calculator.css.map */

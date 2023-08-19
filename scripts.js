@@ -1,7 +1,7 @@
 //Anchor animation
 
 let arrow = document.querySelector('a[href="#top"]');
-    arrow.addEventListener('click', function(event){
+arrow.addEventListener('click', function (event) {
     event.preventDefault();
     document.querySelector('#top').scrollIntoView({
         behavior: "smooth",
@@ -26,23 +26,24 @@ let verticalMenu = document.querySelector('header');
 //     }
 // })
 
-wrapperBurger.addEventListener('click', function(event){
+wrapperBurger.addEventListener('click', function (event) {
     let has = hamburgerButton.classList.toggle('choose');
-    if(has) { verticalMenu.style.left = '0px';
-    }else{
+    if (has) {
+        verticalMenu.style.left = '0px';
+    } else {
         verticalMenu.style.left = '';
     }
     event.stopPropagation();
 })
 
 document.onclick = notMenu
-function notMenu(e){
-    if(!verticalMenu.contains(e.target)){
+
+function notMenu(e) {
+    if (!verticalMenu.contains(e.target)) {
         verticalMenu.style.left = null;
         hamburgerButton.classList.remove('choose');
     }
 }
-
 
 
 // Log in form
@@ -53,19 +54,18 @@ let regButton = document.querySelector('button[name="sign_in"]')
 let regField = document.querySelector('.top')
 let loginBtn = document.querySelector('button[name="login"]')
 
-document.addEventListener('click', (e)=>{
-    if(accBtn.contains(e.target)){
+document.addEventListener('click', (e) => {
+    if (accBtn.contains(e.target)) {
         wrapperForm.style.display = 'block'
-    }else if(!form.contains(e.target)){
+    } else if (!form.contains(e.target)) {
         wrapperForm.style.display = 'none'
-    }
-    else if(regButton.contains(e.target)){
+    } else if (regButton.contains(e.target)) {
         e.preventDefault()
         document.querySelector('form p').innerHTML = 'Регистрация';
         regField.style.visibility = 'visible'
         regButton.innerHTML = 'Зарегистрироваться'
         loginBtn.innerText = 'Авторизоваться'
-        if(loginBtn.contains(e.target) && loginBtn.innerText === 'Авторизоваться'){
+        if (loginBtn.contains(e.target) && loginBtn.innerText === 'Авторизоваться') {
             regField.style.visibility = 'hidden'
         }
     }
@@ -75,15 +75,20 @@ document.addEventListener('click', (e)=>{
 let ulArrow = document.querySelector('.date_wrapper');
 let curMonth = document.querySelector('.current_months')
 let ulList = document.querySelector('ul');
-ulArrow.addEventListener('click', function(event){
-ulList.classList.toggle('switch')
-    if(event.target.tagName === 'LI'){
+// let liClick
+// let gotPercent = 5.8;
+ulArrow.addEventListener('click', function (event) {
+    // liClick = event.target
+    ulList.classList.toggle('switch')
+    if (event.target.tagName === 'LI') {
+        // gotPercent = liClick.getAttribute('value')
         curMonth.innerText = event.target.innerHTML
+        // percent.innerText = gotPercent
     }
     event.stopPropagation()
 
 })
-document.onclick = function(e){
+document.onclick = function (e) {
     ulList.classList.remove('switch')
 }
 //Calculate deposit
@@ -91,29 +96,46 @@ let insertedMoney = document.querySelector('input[name="num"]');// ввод су
 let totalSum = document.querySelector('.final_sum'); //общая сумма с доходом
 let percent = document.querySelector('.percent');// процент по ставке
 let income = document.querySelector('.income');// доход
-let currentPercent = document.querySelectorAll('.list > li')
 
 let perc;
 let curPer = 1;
-let event; //oninput
 let clickEvent
-ulList.addEventListener('click', getValueOfLi)
+ulList.addEventListener('click', clickFunction);
+insertedMoney.addEventListener('input', inputFunction);
 
-function getValueOfLi (e){
+function clickFunction (e){
+    if(!insertedMoney.value) return
+    if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
     clickEvent = e.target
      perc =  clickEvent.getAttribute('value');
-     curPer = clickEvent.getAttribute('data-month')
+     curPer = clickEvent.getAttribute('data-month');
     percent.innerText = perc;
-    let total = +event / 100 * Number(percent.innerText)* curPer;
-    totalSum.innerText = (+event + +total).toFixed(2)  + '₽';
+
+    let total = +insertedMoney.value / 100 * Number(percent.innerText) / 12 * curPer;
+    totalSum.innerText = (+insertedMoney.value + +total).toFixed(2)  + '₽';
+    income.innerText = (total).toFixed(2) + '₽';
+}
+ function inputFunction(){
+    this.value = this.value.replace(/\D/g,'');
+    if(+insertedMoney.value < 0) return;
+    if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
+
+    let total = +insertedMoney.value / 100 * Number(percent.innerText) / 12 * curPer;
+    totalSum.innerText = (+insertedMoney.value + +total).toFixed(2)  + '₽';
     income.innerText = (total).toFixed(2) + '₽';
 
 }
-insertedMoney.addEventListener('input', function(e){
-    event = e.target.value;
-    let total = +event / 100 * Number(percent.innerText)* curPer;
-    totalSum.innerText = (+event + +total).toFixed(2)  + '₽';
-    income.innerText = (total).toFixed(2) + '₽';
 
 
-})
+
+// let formCalc = document.forms.calculator
+//
+// function calculate() {
+//     let insertValue = +formCalc.num.value
+//     if (!insertValue) return
+//         let result = +insertValue / 100 * +gotPercent / 12;
+//     totalSum.innerText = result.toFixed(2) + '₽'
+// }
+//
+// insertedMoney.oninput = calculate;
+// ulList.onclick = calculate;

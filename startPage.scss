@@ -421,7 +421,7 @@ main {
   .phone {
     @include size(100%, 423px);
     position: relative;
-    background-image: url("telephone.png");
+    background-image: url("images/telephone.png");
     background-size: 120%;
     background-repeat: no-repeat;
     z-index: 9999;
