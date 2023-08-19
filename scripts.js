@@ -75,7 +75,6 @@ document.addEventListener('click', (e)=>{
 let ulArrow = document.querySelector('.date_wrapper');
 let curMonth = document.querySelector('.current_months')
 let ulList = document.querySelector('ul');
-let changedMonth;
 ulArrow.addEventListener('click', function(event){
 ulList.classList.toggle('switch')
     if(event.target.tagName === 'LI'){
@@ -93,25 +92,28 @@ let totalSum = document.querySelector('.final_sum'); //общая сумма с 
 let percent = document.querySelector('.percent');// процент по ставке
 let income = document.querySelector('.income');// доход
 let currentPercent = document.querySelectorAll('.list > li')
-let span = document.querySelector('.span')
+
 let perc;
+let curPer = 1;
+let event; //oninput
+let clickEvent
 ulList.addEventListener('click', getValueOfLi)
+
 function getValueOfLi (e){
-    let attr =  e.target.getAttribute('value')
-    perc = attr;
-    span.innerText = perc
-    percent.innerText = perc + '%'
+    clickEvent = e.target
+     perc =  clickEvent.getAttribute('value');
+     curPer = clickEvent.getAttribute('data-month')
+    percent.innerText = perc;
+    let total = +event / 100 * Number(percent.innerText)* curPer;
+    totalSum.innerText = (+event + +total).toFixed(2)  + '₽';
+    income.innerText = (total).toFixed(2) + '₽';
+
 }
 insertedMoney.addEventListener('input', function(e){
-
-
-    let event = e.target.value;
-    let total = +event / 100 * 8;
-    income.innerText = total + '₽';
-    totalSum.innerText = +event + +total;
-    percent.innerText = perc + '%'
+    event = e.target.value;
+    let total = +event / 100 * Number(percent.innerText)* curPer;
+    totalSum.innerText = (+event + +total).toFixed(2)  + '₽';
+    income.innerText = (total).toFixed(2) + '₽';
 
 
 })
-
-
