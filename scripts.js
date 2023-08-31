@@ -103,13 +103,40 @@ let clickEvent
 ulList.addEventListener('click', clickFunction);
 insertedMoney.addEventListener('input', inputFunction);
 
+let date = new Date();
+let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+
 function clickFunction (e){
-    if(!insertedMoney.value) return
+    // if(!insertedMoney.value) return
     if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
     clickEvent = e.target
      perc =  clickEvent.getAttribute('value');
      curPer = clickEvent.getAttribute('data-month');
+
+    let endMonth = document.querySelector('.month_of_end')
+    let day = date.getDate();
+    let month = allMonth[date.getMonth()];
+    let monthIndex ;
+    let year = date.getFullYear()
+    let sumOfMonth = allMonth[date.getMonth()+ +curPer]
+    // console.log(sumOfMonth, allMonth.indexOf(sumOfMonth) + '-й месяц')
+let sumMonth = date.getMonth() + Number(curPer)
+    console.log(sumMonth)
+    if(sumMonth > 11){
+        console.log(`'value'  ${date.getMonth() + Number(curPer)}`)
+        console.log('Already next year')
+        year += 1;
+        sumMonth = ((date.getMonth() + +curPer) - 12)
+        console.log(sumMonth)
+        endMonth.innerHTML = date.getDate() + ' ' + allMonth[sumMonth] +(year)
+    }else{
+        endMonth.innerHTML = date.getDate() + ' ' + sumOfMonth +' '+ (year)
+    }
+
     percent.innerText = perc;
+
+
+
 
     let total = +insertedMoney.value / 100 * Number(percent.innerText) / 12 * curPer;
     totalSum.innerText = (+insertedMoney.value + +total).toFixed(2)  + '₽';
@@ -128,6 +155,29 @@ function clickFunction (e){
 
 
 
+
+
+
+// function num_word(value, words){
+//     value = Math.abs(value) % 100;
+//     let num = value % 10;
+//     if(value > 10 && value < 20) return words[2];
+//     if(num > 1 && num < 5) return words[1];
+//     if(num == 1) return words[0];
+//     return words[2];
+// }
+//
+// $('form input[type="number"]').change(function(){
+//     let count = 0;
+//     $('form input[type="number"]').each(function(){
+//         val = parseInt($(this).val());
+//         if (!isNaN(val)){
+//             count = count + val;
+//         }
+//     });
+//
+//     $('#js_result').html(count + ' ' + num_word(count, ['товар', 'товара', 'товаров']));
+// });
 // let formCalc = document.forms.calculator
 //
 // function calculate() {
