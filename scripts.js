@@ -14,18 +14,6 @@ let wrapperBurger = document.querySelector('.menu');
 let hamburgerButton = document.querySelector('.burger');
 let verticalMenu = document.querySelector('header');
 
-
-// document.addEventListener('click', function(event){
-//     if(event.target.classList == 'hamburger' || event.target.classList == 'menu'){
-//         let has = hamburgerButton.classList.toggle('choose')
-//         if(has){
-//             verticalMenu.style.left = '0'
-
-//         }else{verticalMenu.style.left = '-70%'
-//     }
-//     }
-// })
-
 wrapperBurger.addEventListener('click', function (event) {
     let has = hamburgerButton.classList.toggle('choose');
     if (has) {
@@ -35,10 +23,7 @@ wrapperBurger.addEventListener('click', function (event) {
     }
     event.stopPropagation();
 })
-
-document.onclick = notMenu
-
-function notMenu(e) {
+document.onclick = function(e) {
     if (!verticalMenu.contains(e.target)) {
         verticalMenu.style.left = null;
         hamburgerButton.classList.remove('choose');
@@ -75,15 +60,11 @@ document.addEventListener('click', (e) => {
 let ulArrow = document.querySelector('.date_wrapper');
 let curMonth = document.querySelector('.current_months')
 let ulList = document.querySelector('ul');
-// let liClick
-// let gotPercent = 5.8;
+
 ulArrow.addEventListener('click', function (event) {
-    // liClick = event.target
     ulList.classList.toggle('switch')
     if (event.target.tagName === 'LI') {
-        // gotPercent = liClick.getAttribute('value')
         curMonth.innerText = event.target.innerHTML
-        // percent.innerText = gotPercent
     }
     event.stopPropagation()
 
@@ -96,10 +77,11 @@ let insertedMoney = document.querySelector('input[name="num"]');// ввод су
 let totalSum = document.querySelector('.final_sum'); //общая сумма с доходом
 let percent = document.querySelector('.percent');// процент по ставке
 let income = document.querySelector('.income');// доход
+let endMonth = document.querySelector('.month_of_end')
 
 let perc;
 let curPer = 1;
-let clickEvent
+let clickEvent;
 ulList.addEventListener('click', clickFunction);
 insertedMoney.addEventListener('input', inputFunction);
 
@@ -107,52 +89,38 @@ let date = new Date();
 let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
 
 function clickFunction (e){
-    // if(!insertedMoney.value) return
     if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
     clickEvent = e.target
      perc =  clickEvent.getAttribute('value');
-     curPer = clickEvent.getAttribute('data-month');
-
-    let endMonth = document.querySelector('.month_of_end')
-    let day = date.getDate();
-    let month = allMonth[date.getMonth()];
-    let monthIndex ;
-    let year = date.getFullYear()
-    let sumOfMonth = allMonth[date.getMonth()+ +curPer]
-    // console.log(sumOfMonth, allMonth.indexOf(sumOfMonth) + '-й месяц')
-let sumMonth = date.getMonth() + Number(curPer)
-    console.log(sumMonth)
-    if(sumMonth > 11){
-        console.log(`'value'  ${date.getMonth() + Number(curPer)}`)
-        console.log('Already next year')
-        year += 1;
-        sumMonth = ((date.getMonth() + +curPer) - 12)
-        console.log(sumMonth)
-        endMonth.innerHTML = date.getDate() + ' ' + allMonth[sumMonth] +(year)
-    }else{
-        endMonth.innerHTML = date.getDate() + ' ' + sumOfMonth +' '+ (year)
-    }
-
+     curPer = clickEvent.dataset.month
+    checkDate()
     percent.innerText = perc;
-
-
-
-
-    let total = +insertedMoney.value / 100 * Number(percent.innerText) / 12 * curPer;
-    totalSum.innerText = (+insertedMoney.value + +total).toFixed(2)  + '₽';
-    income.innerText = (total).toFixed(2) + '₽';
+    total()
 }
+
  function inputFunction(){
     this.value = this.value.replace(/\D/g,'');
     if(+insertedMoney.value < 0) return;
     if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
+    total()
+     checkDate()
+}
 
+function checkDate(){
+    let year = date.getFullYear()
+    let sumMonth = date.getMonth() + +(curPer)
+    if(sumMonth > 11){
+        year += 1;
+        sumMonth = sumMonth - 12
+    }
+    endMonth.innerHTML = date.getDate() + ' ' + allMonth[sumMonth] +' '+(year)
+}
+
+function total(){
     let total = +insertedMoney.value / 100 * Number(percent.innerText) / 12 * curPer;
     totalSum.innerText = (+insertedMoney.value + +total).toFixed(2)  + '₽';
     income.innerText = (total).toFixed(2) + '₽';
-
 }
-
 
 
 
