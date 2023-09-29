@@ -44,18 +44,23 @@ document.addEventListener('click', (e) => {
         wrapperForm.style.display = 'block'
     } else if (!form.contains(e.target)) {
         wrapperForm.style.display = 'none'
-    } else if (regButton.contains(e.target)) {
+    } else if (regButton.contains(e.target) && regButton.innerText === 'Нет аккаунта?'){
         e.preventDefault()
-        document.querySelector('form p').innerHTML = 'Регистрация';
+        form.querySelector('p').innerHTML = 'Регистрация';
         regField.style.visibility = 'visible'
         regButton.innerHTML = 'Зарегистрироваться'
         loginBtn.innerText = 'Авторизоваться'
-        if (loginBtn.contains(e.target) && loginBtn.innerText === 'Авторизоваться') {
-            regField.style.visibility = 'hidden'
-        }
+    }else if(regButton.contains(e.target) && regButton.innerText === 'Зарегистрироваться' ){
+        regField.style.visibility = 'visible'
+        regButton.innerHTML = 'Зарегистрироваться'
+        loginBtn.innerText = 'Авторизоваться'
+    }
+    else if (loginBtn.contains(e.target) && loginBtn.innerText === 'Авторизоваться') {
+        e.preventDefault()
+        regField.style.visibility = 'hidden'
+        loginBtn.innerText = 'Войти'
     }
 })
-
 // Calculator page
 let ulArrow = document.querySelector('.date_wrapper');
 let curMonth = document.querySelector('.current_months')
