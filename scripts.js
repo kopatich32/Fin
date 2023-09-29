@@ -94,7 +94,7 @@ function clickFunction (e){
      perc =  clickEvent.getAttribute('value');
      curPer = clickEvent.dataset.month
     checkDate()
-    percent.innerText = perc;
+    percent.innerText = perc + '%';
     total()
 }
 
@@ -117,7 +117,7 @@ function checkDate(){
 }
 
 function total(){
-    let total = +insertedMoney.value / 100 * Number(percent.innerText) / 12 * curPer;
+    let total = +insertedMoney.value / 100 * Number(parseInt(percent.innerText)) / 12 * curPer;
     totalSum.innerText = (+insertedMoney.value + +total).toFixed(2)  + '₽';
     income.innerText = (total).toFixed(2) + '₽';
 }
