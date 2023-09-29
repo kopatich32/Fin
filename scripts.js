@@ -113,7 +113,6 @@ function checkDate(){
         year += 1;
         sumMonth = sumMonth - 12
     }
-
     endMonth.innerHTML = date.getDate() + ' ' + allMonth[sumMonth] +' '+(year)
 }
 
