@@ -80,7 +80,7 @@ main {
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 1fr; }
+  grid-template-rows: repeat(4, 1fr); }
   .gridContainer p {
     display: flex;
     flex-direction: row;
@@ -98,6 +98,8 @@ main {
     grid-column-end: 4;
     display: flex;
     justify-content: center; }
+  .gridContainer p:nth-child(2) {
+    grid-column: 1/4; }
 
 .registration_wrapper {
   display: none;

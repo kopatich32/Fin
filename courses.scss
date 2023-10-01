@@ -95,7 +95,7 @@ align-self: center;
 .gridContainer{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
 p{
   @include Flex(row, center, center);
   border: 1px solid $textColor;
@@ -116,6 +116,9 @@ p:first-child{
   display: flex;
   justify-content: center;
 }
+  p:nth-child(2){
+    grid-column: 1/4;
+  }
 }
 @import "_form";
 

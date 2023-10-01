@@ -56,15 +56,16 @@
         
         <div class="gridContainer">
             <p>г. Калуга ул. Кирова д. 1</p>
+            <p id="value_of_day">lalalala</p>
             <p class="buy">Покупка</p>
             <p></p>
             <p class="sell">Продажа</p>
-            <p>27.10</p>
+            <p id="buy_usd">27.10</p>
             <p><img src="images/Usa_flag.svg" alt="USA"></p>
-            <p>24.83</p>
-            <p>27.50</p>
+            <p id="sell_doll">24.83</p>
+            <p id="buy_eur">27.50</p>
             <p><img src="images/Euro.png" alt="Euro"></p>
-            <P>24.75</P>
+            <P id="sell_eur">24.75</P>
         </div>
     </div>
     <footer>
@@ -96,28 +97,10 @@
         </div>
     </form>
 </div>
-    <script src="scripts.js"></script>
-    <!-- https://www.vtb.ru/personal/platezhi-i-perevody/obmen-valjuty/ -->
 
-    https://codepen.io/ahmadbassamemran/pen/VQwPGr
-    https://codepen.io/alvarotrigo/pen/OJzYrQZ
-
-<script type="module">
-    let currentValue = document.querySelector('.current_date')
-    let date = new Date;
-    let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
-    function getMonth (month){
-        return allMonth[month.getMonth()]
-    }
-    let thisYear = date.getFullYear();
-    let thisDay = date.getDate();
-    currentValue.innerHTML = thisYear + '-' + getMonth(date) + '-' + thisDay
-</script>
+<script src="scripts.js"></script>
+<script type="module" src="dateAndCourse.js"></script>
+<script src="course.js"></script>
 </body>
-
-
-
-
-
 
 </html>
