@@ -44,6 +44,10 @@ body, html{
     a:nth-child(2){
         border-bottom: 3px solid black;
     }
+    a:nth-child(1){
+border-bottom: none !important;
+    }
+
   }
   main{
     flex: 1 1 auto;

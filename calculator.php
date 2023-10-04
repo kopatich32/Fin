@@ -14,28 +14,7 @@
 </head>
 <body id="top">
 <div class="cont">
-    <header>
-        <a href="index.html" title="на главную страницу">
-            <div class="logo">
-                <span class="fin2">Fin</span>
-                <span class="kit2">Kit</span>
-            </div>
-        </a>
-        <a href="courses.html">
-            <div class="courses">Курсы валют</div>
-        </a>
-        <a href="calculator.html">
-            <div class="course_of_metal">Калькулятор вкладов</div>
-        </a>
-        <a href="">
-            <div class="contacts">Контакты</div>
-        </a>
-        <a href="">
-            <div class="about">О нас</div>
-        </a>
-        <a href="#"> <div class="account"><img src="images/account_icon.svg.png" alt="Profile"></div></a>
-
-    </header>
+    <?php include 'header.php'?>
     <!-- Hamburger menu -->
     <div class="menu">
         <div class="burger">
