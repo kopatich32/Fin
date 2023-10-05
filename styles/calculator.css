@@ -7,7 +7,7 @@ body {
     margin-top: auto; }
 
 header a:nth-child(2) {
-  border-bottom: none; }
+  border-bottom: 3px solid transparent; }
 header a:nth-child(3) {
   border-bottom: 3px solid black; }
 

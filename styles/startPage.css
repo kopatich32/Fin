@@ -39,11 +39,11 @@ header {
     text-decoration: none;
     color: inherit;
     border-bottom: 3px solid transparent;
-    transition: .1s;
+    transition: .6s;
     padding: 5px; }
-    header a:hover:not(header a:last-child) {
+    header a:hover:not(a:last-child) {
       border-bottom: 3px solid black;
-      transition: all .1s; }
+      transition: 1s; }
     header a .account {
       width: 40px;
       height: 40px; }

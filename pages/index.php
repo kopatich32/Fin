@@ -18,7 +18,7 @@
                 <a href="courses.php"><div class="courses">Курсы валют</div></a>
                 <a href="calculator.php"><div class="course_of_metal">Калькулятор вкладов</div></a>
                 <a href="contacts.php"><div class="contacts">Контакты</div></a>
-                <a href=""><div class="about">О нас</div></a>
+                <a href="about.php"><div class="about">О нас</div></a>
             <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
         </header> 
         <!-- Hamburger menu -->
@@ -126,30 +126,7 @@
         </div>
     </footer>
 <!--Form-->
-    <div class="registration_wrapper">
-        <form name="registration">
-            <p>Войти в профиль</p>
-            <div class="insert_field">
-                <div class="top">
-                    <input type="text" name="name" placeholder="Имя">
-                    <input type="text" name="lastname" placeholder="Фамилия">
-                </div>
-                <div class="bottom">
-                    <input type="password" name="password" placeholder="Пароль">
-                    <input type="email" name="email" placeholder="Почта"></div>
-            </div>
-            <div class="form_buttons">
-                <button name="login">Войти</button>
-                <button name="sign_in" >Нет аккаунта?</button>
-            </div>
-        </form>
-    </div>
-
-
-
-
-
-
+    <?php include 'registrationForm.php'?>
 
 
     <!--<script>-->

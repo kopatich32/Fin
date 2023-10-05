@@ -50,11 +50,11 @@ header{
     text-decoration: none;
     color: inherit;
     border-bottom: 3px solid transparent;
-    transition: .1s;
+    transition: .6s;
     padding: 5px;
-    &:hover:not(&:last-child){
+    &:hover:not(a:last-child){
       border-bottom: 3px solid black;
-      transition: all .1s;
+      transition:  1s;
     }
     .account{
       @include size(40px,40px);

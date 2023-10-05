@@ -1,5 +1,5 @@
 <header>
-    <a href="index.html" title="на главную страницу">
+    <a href="index.php" title="на главную страницу">
         <div class="logo">
             <span class="fin2">Fin</span>
             <span class="kit2">Kit</span>
@@ -14,7 +14,7 @@
     <a href="contacts.php">
         <div class="contacts">Контакты</div>
     </a>
-    <a href="">
+    <a href="about.php">
         <div class="about">О нас</div>
     </a>
     <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
