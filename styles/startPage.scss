@@ -19,16 +19,16 @@
 $footerColor: #CBECFF;
 $textColor: #0962E8;
 @font-face {
-  @include Font("Inter_Fonts/Inter-Light.ttf", 200);
+  @include Font("../Inter_Fonts/Inter-Light.ttf", 200);
 }
 @font-face {
-  @include Font("Inter_Fonts/Inter-Medium.ttf", 400);
+  @include Font("../Inter_Fonts/Inter-Medium.ttf", 400);
 }
 @font-face {
- @include Font("Inter_Fonts/Inter-SemiBold.ttf", 700);
+ @include Font("../Inter_Fonts/Inter-SemiBold.ttf", 700);
 }
 @font-face {
-@include Font("Inter_Fonts/Inter-Bold.ttf", 900);
+@include Font("../Inter_Fonts/Inter-Bold.ttf", 900);
 }
 
 * {
@@ -323,7 +323,7 @@ main {
     right: 5%;
     height: 35px;
     padding-top: 14px;
-    z-index: 99;
+    z-index: 100;
     cursor: pointer;
     .burger {
       position: relative;
@@ -374,7 +374,7 @@ main {
     width: 70%;
     left: -70%;
     background-color: $footerColor - #111;
-    z-index:999;
+    z-index:102;
     transition: 1s;
   }
 
@@ -421,10 +421,10 @@ main {
   .phone {
     @include size(100%, 423px);
     position: relative;
-    background-image: url("images/telephone.png");
+    background-image: url("../images/telephone.png");
     background-size: 120%;
     background-repeat: no-repeat;
-    z-index: 9999;
+    z-index: 99;
   }
 
   section {
@@ -438,7 +438,7 @@ main {
     width: 100%;
     margin-top: -66px;
     margin-left: 0;
-    z-index: 99999;
+    z-index: 50;
     padding: 0 10px 0 10px;
   }
 
@@ -702,4 +702,4 @@ footer{
 }
 }
 // Registration form
-@import "_form";
+@import "form";

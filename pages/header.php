@@ -17,6 +17,6 @@
     <a href="">
         <div class="about">О нас</div>
     </a>
-    <a href="#"> <div class="account"><img src="images/account_icon.svg.png" alt="Profile"></div></a>
+    <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
 
 </header>

@@ -1,21 +1,21 @@
 @font-face {
   src: local("Inter");
-  src: url("Inter_Fonts/Inter-Light.ttf");
+  src: url("../Inter_Fonts/Inter-Light.ttf");
   font-family: "Inter";
   font-weight: 200; }
 @font-face {
   src: local("Inter");
-  src: url("Inter_Fonts/Inter-Medium.ttf");
+  src: url("../Inter_Fonts/Inter-Medium.ttf");
   font-family: "Inter";
   font-weight: 400; }
 @font-face {
   src: local("Inter");
-  src: url("Inter_Fonts/Inter-SemiBold.ttf");
+  src: url("../Inter_Fonts/Inter-SemiBold.ttf");
   font-family: "Inter";
   font-weight: 700; }
 @font-face {
   src: local("Inter");
-  src: url("Inter_Fonts/Inter-Bold.ttf");
+  src: url("../Inter_Fonts/Inter-Bold.ttf");
   font-family: "Inter";
   font-weight: 900; }
 * {
@@ -302,7 +302,7 @@ main {
     right: 5%;
     height: 35px;
     padding-top: 14px;
-    z-index: 99;
+    z-index: 100;
     cursor: pointer; }
     .menu .burger {
       position: relative; }
@@ -347,7 +347,7 @@ main {
     width: 70%;
     left: -70%;
     background-color: #badbee;
-    z-index: 999;
+    z-index: 102;
     transition: 1s; }
 
   .container {
@@ -361,10 +361,10 @@ main {
     width: 100%;
     height: 423px;
     position: relative;
-    background-image: url("images/telephone.png");
+    background-image: url("../images/telephone.png");
     background-size: 120%;
     background-repeat: no-repeat;
-    z-index: 9999; }
+    z-index: 99; }
 
   section {
     display: flex;
@@ -379,7 +379,7 @@ main {
     width: 100%;
     margin-top: -66px;
     margin-left: 0;
-    z-index: 99999;
+    z-index: 50;
     padding: 0 10px 0 10px; }
 
   .content p {

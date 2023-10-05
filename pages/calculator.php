@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Калькулятор вкладов</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="startPage.css">
-    <link rel="stylesheet" href="courses.css">
-    <link rel="stylesheet" href="calculator.css">
-    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="../styles/startPage.css">
+    <link rel="stylesheet" href="../styles/courses.css">
+    <link rel="stylesheet" href="../styles/calculator.css">
+    <link rel="icon" href="../images/icon.png">
 </head>
 <body id="top">
 <div class="cont">
-    <?php include 'header.php'?>
+    <?php include 'header.php' ?>
     <!-- Hamburger menu -->
     <div class="menu">
         <div class="burger">
@@ -113,8 +113,8 @@
         </div>
     </form>
 </div>
-<script src="scripts.js"></script>
-<script src="calculatorPage.js"></script>
+<script src="../scripts.js"></script>
+<script src="../calculatorPage.js"></script>
 
 </body>
 </html>
