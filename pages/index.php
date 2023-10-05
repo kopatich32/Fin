@@ -20,7 +20,7 @@
                 <a href="contacts.php"><div class="contacts">Контакты</div></a>
                 <a href="about.php"><div class="about">О нас</div></a>
             <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
-        </header> 
+        </header>
         <!-- Hamburger menu -->
         <div class="menu">
             <div class="burger">
@@ -114,17 +114,18 @@
 
             </div>
         </div>
+        <footer>
+            <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
+            <p> Связаться с нами <a href="tel:8 (123)-456-78-90">8 (123)-456-78-90</a></p>
+            <p class="footRight">Разрабатано в 2023 г.</p>
+            <div class="anchor_top">
+                <a href="#top" title="наверх">
+                    <div id="icon" class="material-symbols-outlined icon">arrow_circle_up</div>
+                </a>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
-        <p> Связаться с нами <a href="tel:8 (123)-456-78-90">8 (123)-456-78-90</a></p>
-        <p class="footRight">Разрабатано в 2023 г.</p>
-        <div class="anchor_top">
-            <a href="#top" title="наверх">
-                <div id="icon" class="material-symbols-outlined icon">arrow_circle_up</div>
-            </a>
-        </div>
-    </footer>
+
 <!--Form-->
     <?php include 'registrationForm.php'?>
 

@@ -30,7 +30,10 @@ $textColor: #0962E8;
 @font-face {
 @include Font("../Inter_Fonts/Inter-Bold.ttf", 900);
 }
-
+.project{
+  width: 100%;
+  @include Flex(column,center,center);
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,12 +43,13 @@ $textColor: #0962E8;
 
 html, body {
   min-height: 100%;
-  width: 100vw;
+  width: 100%;
 }
 header{
   @include Flex(row, space-evenly, center);
   height: 70px;
   background-color: $footerColor - #111111;
+  width: 100%;
   a{
     text-decoration: none;
     color: inherit;
@@ -263,11 +267,14 @@ p:first-child {
 
 main {
   margin-bottom: 77px;
+  width: 97%;
+  padding: 1%;
 }
 
 .bottom_part {
   @include Flex(row, center, normal);
-  width: 100%;
+  width: 97%;
+  padding:1%;
   margin-bottom: 200px;
 }
 

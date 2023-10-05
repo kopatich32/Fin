@@ -18,6 +18,13 @@
   src: url("../Inter_Fonts/Inter-Bold.ttf");
   font-family: "Inter";
   font-weight: 900; }
+.project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,7 +33,7 @@
 
 html, body {
   min-height: 100%;
-  width: 100vw; }
+  width: 100%; }
 
 header {
   display: flex;
@@ -34,7 +41,8 @@ header {
   justify-content: space-evenly;
   align-items: center;
   height: 70px;
-  background-color: #badbee; }
+  background-color: #badbee;
+  width: 100%; }
   header a {
     text-decoration: none;
     color: inherit;
@@ -251,14 +259,17 @@ h2 {
   margin-top: 37px; }
 
 main {
-  margin-bottom: 77px; }
+  margin-bottom: 77px;
+  width: 97%;
+  padding: 1%; }
 
 .bottom_part {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: normal;
-  width: 100%;
+  width: 97%;
+  padding: 1%;
   margin-bottom: 200px; }
 
 .left_of_bottom {
