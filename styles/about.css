@@ -1,4 +1,4 @@
-header a:nth-child(2) {
+header a:nth-child(2), header a:nth-child(3) {
   border-bottom: 3px solid transparent; }
 header a:nth-child(5) {
   border-bottom: 3px solid black; }

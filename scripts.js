@@ -1,13 +1,6 @@
 //Anchor animation
-
-let arrow = document.querySelector('a[href="#top"]');
-arrow.addEventListener('click', function (event) {
-    event.preventDefault();
-    document.querySelector('#top').scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-    })
-})
+import anchor from './anchor.js'
+document.querySelector('a[href="#top"]').onclick = anchor;
 
 // Hamburger Menu
 let wrapperBurger = document.querySelector('.menu');

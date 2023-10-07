@@ -21,6 +21,7 @@
                 <a href="about.php"><div class="about">О нас</div></a>
             <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
         </header>
+        <?php include 'registrationForm.php';?>
         <!-- Hamburger menu -->
         <div class="menu">
             <div class="burger">
@@ -114,41 +115,10 @@
 
             </div>
         </div>
-        <footer>
-            <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
-            <p> Связаться с нами <a href="tel:8 (123)-456-78-90">8 (123)-456-78-90</a></p>
-            <p class="footRight">Разрабатано в 2023 г.</p>
-            <div class="anchor_top">
-                <a href="#top" title="наверх">
-                    <div id="icon" class="material-symbols-outlined icon">arrow_circle_up</div>
-                </a>
-            </div>
-        </footer>
+        <?php include 'footer.php' ?>
     </div>
 
-<!--Form-->
-    <?php include 'registrationForm.php'?>
-
-
-    <!--<script>-->
-    <!--        function ready() {-->
-    <!--        // alert('DOM готов');-->
-    <!--        // alert(`Размер изображения: ${img.offsetWidth}x${img.offsetHeight}`);-->
-    <!--    }-->
-
-    <!--        document.addEventListener("DOMContentLoaded", ready);-->
-    <!--</script>-->
-
-    <!--<img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">-->
-    <!--</script>-->
-    <!--<svg>-->
-    <!--    <rect x="10" y="10" width="50" height="10" fill="black"></rect>-->
-    <!--    <rect x="10" y="30" width="50" height="10" fill="black"></rect>-->
-    <!--    <rect x="10" y="50" width="50" height="10" fill="black"></rect>-->
-    <!--</svg>-->
-    <script src="../scripts.js"></script>
-
-
+    <script type="module" src="../scripts.js"></script>
 </body>
 
 </html>

@@ -12,7 +12,10 @@
 
 <body id="top">
 <div class="cont">
-   <?php include 'header.php' ?>
+   <?php
+   include 'header.php';
+   include 'registrationForm.php';
+   ?>
     <!-- Hamburger menu -->
     <div class="menu">
         <div class="burger">
@@ -48,20 +51,10 @@
             <P id="sell_eur">24.75</P>
         </div>
     </div>
-    <footer>
-        <p>2007 - 2023 &#169; OOO "Fin Kit"</p>
-        <p> Связаться с нами <a href="tel:8 (123)-456-78-90">8 (123)-456-78-90</a></p>
-        <p class="footRight">Разрабатано в 2023 г.</p>
-        <div class="anchor_top">
-            <a href="#top" title="наверх">
-                <div id="icon" class="material-symbols-outlined icon">arrow_circle_up</div>
-            </a>
-        </div>
-    </footer>
+    <?php include "footer.php";?>
 </div>
-<?php include 'registrationForm.php'?>
 
-<script src="../scripts.js"></script>
+<script type="module" src="../scripts.js"></script>
 <script type="module" src="../dateAndCourse.js"></script>
 <script src="../course.js"></script>
 </body>

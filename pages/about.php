@@ -8,10 +8,80 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../styles/startPage.css">
     <link rel="stylesheet" href="../styles/courses.css">
+<!--    <link rel="stylesheet" href="../styles/calculator.css">-->
+
     <link rel="stylesheet" href="../styles/about.css">
     <title>О нас</title>
 </head>
-<body>
-<?php include 'header.php'?>
+<body id="top">
+<?php
+include 'header.php';
+include 'registrationForm.php';
+?>
+<div class="menu">
+    <div class="burger">
+        <div class="hamburger"></div>
+    </div>
+</div>
+<!--<pre>-->
+<!---->
+<!--.......-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--/-->
+<!--    /-->
+<!--    /-->
+<!--    /-->
+<!--    //-->
+<!--    /-->
+<!---->
+<!--    ////-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--    .-->
+<!--    .-->
+<!--    .-->
+<!--    .-->
+<!--    .-->
+<!--    .-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--</pre>-->
+
+<?php include 'footer.php';?>
+<script type="module" src="../scripts.js"></script>
 </body>
 </html>
