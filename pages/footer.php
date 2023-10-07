@@ -5,7 +5,7 @@ function number($year, $word) {
     $cases = [2, 0, 1];
     return  $year . $word[($year % 10 >= 2 && $year % 10 <= 4) ? 2 : $cases[min($year % 10, 2)]] ;
 }
-$resultAge = number($difference, ['год', 'лет', 'года']);
+$resultAge = number($difference, [' год', ' лет', ' года']);
 
 ?>
 <footer>
