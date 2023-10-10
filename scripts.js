@@ -1,11 +1,12 @@
 //Anchor animation
 import anchor from './anchor.js'
-document.querySelector('a[href="#top"]').onclick = anchor;
+let $ = document.querySelector.bind(document);
 
+$('a[href="#top"]').onclick = anchor;
 // Hamburger Menu
-let wrapperBurger = document.querySelector('.menu');
-let hamburgerButton = document.querySelector('.burger');
-let verticalMenu = document.querySelector('header');
+let wrapperBurger = $('.menu');
+let hamburgerButton = $('.burger');
+let verticalMenu = $('header');
 
 wrapperBurger.addEventListener('click', function (event) {
     let has = hamburgerButton.classList.toggle('choose');
@@ -26,11 +27,11 @@ document.onclick = function(e) {
 
 // Log in form
 let form = document.forms.registration;
-let wrapperForm = document.querySelector('.registration_wrapper');
-let accBtn = document.querySelector('.account');
-let regButton = document.querySelector('button[name="sign_in"]')
-let regField = document.querySelector('.top')
-let loginBtn = document.querySelector('button[name="login"]')
+let wrapperForm = $('.registration_wrapper');
+let accBtn = $('.account');
+let regButton = $('button[name="sign_in"]')
+let regField = $('.top')
+let loginBtn = $('button[name="login"]')
 
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {

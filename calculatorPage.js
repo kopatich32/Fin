@@ -1,7 +1,7 @@
-
-let ulArrow = document.querySelector('.date_wrapper');
-let curMonth = document.querySelector('.current_months')
-let ulList = document.querySelector('ul');
+let $ = document.querySelector.bind(document);
+let ulArrow = $('.date_wrapper');
+let curMonth = $('.current_months')
+let ulList = $('ul');
 
 ulArrow.addEventListener('click', function (event) {
     ulList.classList.toggle('switch')
@@ -14,11 +14,11 @@ document.onclick = function (e) {
     ulList.classList.remove('switch')
 }
 //Calculate deposit
-let insertedMoney = document.querySelector('input[name="num"]');// ввод суммы
-let totalSum = document.querySelector('.final_sum'); //общая сумма с доходом
-let percent = document.querySelector('.percent');// процент по ставке
-let income = document.querySelector('.income');// доход
-let endMonth = document.querySelector('.month_of_end')
+let insertedMoney = $('input[name="num"]');// ввод суммы
+let totalSum = $('.final_sum'); //общая сумма с доходом
+let percent = $('.percent');// процент по ставке
+let income = $('.income');// доход
+let endMonth = $('.month_of_end')
 
 let perc;
 let curPer = 1;
