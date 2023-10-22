@@ -39,16 +39,16 @@
         
         <div class="gridContainer">
             <p>г. Калуга ул. Кирова д. 1</p>
-            <p id="value_of_day">lalalala</p>
+            <p id="value_of_day">Value from API</p>
             <p class="buy">Покупка</p>
             <p></p>
             <p class="sell">Продажа</p>
-            <p id="buy_usd">27.10</p>
+            <p id="buy_usd">Value from API</p>
             <p><img src="../images/Usa_flag.svg" alt="USA"></p>
-            <p id="sell_doll">24.83</p>
-            <p id="buy_eur">27.50</p>
+            <p id="sell_doll">Value from API</p>
+            <p id="buy_eur">Value from API</p>
             <p><img src="../images/Euro.png" alt="Euro"></p>
-            <P id="sell_eur">24.75</P>
+            <P id="sell_eur">Value from API</P>
         </div>
     </div>
     <?php include "footer.php";?>
@@ -56,7 +56,7 @@
 
 <script type="module" src="../scripts.js"></script>
 <script type="module" src="../dateAndCourse.js"></script>
-<script src="../course.js"></script>
+<script type="module" src="../course.js"></script>
 </body>
 
 </html>
