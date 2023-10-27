@@ -27,10 +27,15 @@ ulList.addEventListener('click', clickFunction);
 insertedMoney.addEventListener('input', inputFunction);
 
 let date = new Date();
-let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+// let allMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+let allMonth = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"]
 
 function clickFunction (e){
-    if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
+    // if(+insertedMoney.value > 10000000) insertedMoney.value = 0;
+    if(+insertedMoney.value[8]){
+        this.value = this.value.substring(0, 8)
+    }
+
     clickEvent = e.target
     perc =  clickEvent.getAttribute('value');
     curPer = clickEvent.dataset.month
@@ -42,7 +47,10 @@ function clickFunction (e){
 function inputFunction(){
     this.value = this.value.replace(/\D/g,'');
     if(+insertedMoney.value < 0) return;
-    if(+insertedMoney.value > 10000000) insertedMoney.value = 10000000;
+    if(+insertedMoney.value[8]){
+        this.value = this.value.substring(0, 8)
+    }
+
     total()
     checkDate()
 }
