@@ -78,6 +78,9 @@ main {
 
 .courseOfCurrency h2 {
   margin: 0; }
+.courseOfCurrency .time_now {
+  height: 1em;
+  margin-bottom: 5px; }
 
 .gridContainer {
   display: grid;

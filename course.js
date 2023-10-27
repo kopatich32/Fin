@@ -9,7 +9,7 @@ fetch('https://www.cbr-xml-daily.ru/latest.js')
         forValue(data)
     })
 function forValue(cash){
-    console.log(cash.date)
+    console.log(cash)
     let getFetchMonth = cash.date.split('-');
     value_of_day.innerText = "Курс валют на " +  getFetchMonth[2] + '-'+ allMonth[getFetchMonth[1]-1]+'-'+getFetchMonth[0];
     buy_usd.innerText = (1 / cash.rates.USD).toFixed(2)
