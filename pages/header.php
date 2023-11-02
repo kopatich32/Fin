@@ -1,5 +1,6 @@
 <?php
 session_start();
+//session_destroy();
 require_once '../PHPscripts/auth.php' ?>
 <header>
     <a href="index.php" title="на главную страницу">
@@ -20,9 +21,13 @@ require_once '../PHPscripts/auth.php' ?>
     <a href="about.php">
         <div class="about">О нас</div>
     </a>
-    <a href="#">
-        <div class="user" title="<?= $first_symbol['email'] ?>"> <?= $final_sym; ?></div>
+    <?php
+    if($_SESSION['alreadyIn']){ ?>
+    <a href="#" class="user">
+        <?php  echo "<div ". "title=".$first_symbol['email'] . ">" . $final_sym . "</div>";?>
+       <?php } ?>
     </a>
+
     <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
 
 </header>

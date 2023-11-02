@@ -11,7 +11,7 @@ if($DB_init->connect_errno){
     if(isset($_POST['login']) || isset($_POST['reg'])){
         $reg_name = $_POST['name'];
         $reg_surname = $_POST['lastname'];
-        $reg_pass = md5($_POST['password']);
+        $reg_pass  = $_POST['password'];
         $reg_email = $_POST['email'];
 //    registration
         if(isset($_POST['reg'])){
@@ -20,12 +20,10 @@ if($DB_init->connect_errno){
             }else{
                 $DB_init->query("INSERT INTO `authorization`( `name`, `surname`, `email`, `password`) VALUES ('$reg_name','$reg_surname','$reg_email','$reg_pass')");
             }
-
         }
 
         //login
         if(isset($_POST['login'])){
-
             $res = $DB_init->query("SELECT * FROM `authorization` WHERE email = '$reg_email'  AND  password = '$reg_pass'");
             if(empty($reg_email) || empty($reg_pass)){
                 echo 'fill the fields';
@@ -33,13 +31,13 @@ if($DB_init->connect_errno){
                 if($res->num_rows>0){
                     $_SESSION['alreadyIn'] = 'Login success';
                     header('Location: ../pages/index.php');
-                    echo 'Success';
                 }else{
                     echo 'nope';
                 }
             }
         }
     }
+
     $first_symbol = $DB_init->query("SELECT * FROM `authorization`")->fetch_assoc();
     $final_sym = mb_strtoupper(str_split($first_symbol['email'])[0]);
 }

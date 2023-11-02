@@ -37,6 +37,7 @@ let auth = $('.auth');
 
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {
+        // e.preventDefault();
         wrapperForm.style.display = 'block'
     }
     else if (!form.contains(e.target)) {
