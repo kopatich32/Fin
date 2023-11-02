@@ -59,6 +59,16 @@ header {
         object-fit: contain;
         width: 100%;
         height: 100%; }
+  header .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid red;
+    border-radius: 50%;
+    border-bottom: none; }
 
 .container {
   width: 100%;
@@ -713,7 +723,10 @@ footer {
         border-radius: 12px;
         border: none;
         color: #ffffff;
-        cursor: pointer; }
+        cursor: pointer;
+        margin-right: 20px; }
+      .registration_wrapper form .form_buttons .reg, .registration_wrapper form .form_buttons .auth {
+        display: none; }
     .registration_wrapper form .insert_field .top {
       visibility: hidden; }
     .registration_wrapper form .insert_field .top > input, .registration_wrapper form .insert_field .bottom > input {

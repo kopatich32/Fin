@@ -152,7 +152,10 @@ main {
         border-radius: 12px;
         border: none;
         color: #ffffff;
-        cursor: pointer; }
+        cursor: pointer;
+        margin-right: 20px; }
+      .registration_wrapper form .form_buttons .reg, .registration_wrapper form .form_buttons .auth {
+        display: none; }
     .registration_wrapper form .insert_field .top {
       visibility: hidden; }
     .registration_wrapper form .insert_field .top > input, .registration_wrapper form .insert_field .bottom > input {

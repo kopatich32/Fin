@@ -1,6 +1,7 @@
 // Registration form
 .registration_wrapper{
   display: none;
+  //display: block;
   position: absolute;
   top: 0;
   right: 0;
@@ -38,6 +39,11 @@ button:first-child{
         border: none;
         color: #ffffff;
         cursor: pointer;
+        &:first-child{}
+        margin-right: 20px;
+      }
+      .reg, .auth{
+        display: none;
       }
     }
     .insert_field{

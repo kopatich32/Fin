@@ -1,3 +1,6 @@
+<?php
+session_start();
+require_once '../PHPscripts/auth.php' ?>
 <header>
     <a href="index.php" title="на главную страницу">
         <div class="logo">
@@ -16,6 +19,9 @@
     </a>
     <a href="about.php">
         <div class="about">О нас</div>
+    </a>
+    <a href="#">
+        <div class="user" title="<?= $first_symbol['email'] ?>"> <?= $final_sym; ?></div>
     </a>
     <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
 

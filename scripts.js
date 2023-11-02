@@ -29,29 +29,43 @@ document.onclick = function(e) {
 let form = document.forms.registration;
 let wrapperForm = $('.registration_wrapper');
 let accBtn = $('.account');
-let regButton = $('button[name="sign_in"]')
-let regField = $('.top')
-let loginBtn = $('button[name="login"]')
+let regButton = $('button[name="sign_in"]');
+let regField = $('.top');
+let loginBtn = $('button[name="login"]');
+let registration = $('button[name="reg"]');
+let auth = $('.auth');
 
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {
         wrapperForm.style.display = 'block'
-    } else if (!form.contains(e.target)) {
+    }
+    else if (!form.contains(e.target)) {
         wrapperForm.style.display = 'none'
-    } else if (regButton.contains(e.target) && regButton.innerText === 'Нет аккаунта?'){
-        e.preventDefault()
+        }
+    else if (regButton.contains(e.target)){ //sign_in
+        e.preventDefault();
         form.querySelector('p').innerHTML = 'Регистрация';
         regField.style.visibility = 'visible'
-        regButton.innerHTML = 'Зарегистрироваться'
-        loginBtn.innerText = 'Авторизоваться'
-    }else if(regButton.contains(e.target) && regButton.innerText === 'Зарегистрироваться' ){
-        regField.style.visibility = 'visible'
-        regButton.innerHTML = 'Зарегистрироваться'
-        loginBtn.innerText = 'Авторизоваться'
+        regButton.style.display = 'none';
+        registration.style.display = 'block';
+        loginBtn.style.display = 'none';
+        auth.style.display = 'block';
     }
-    else if (loginBtn.contains(e.target) && loginBtn.innerText === 'Авторизоваться') {
+    // else if(registration.contains(e.target)){ //reg
+    //     // regField.style.visibility = 'visible';
+    //     // registration.style.display = 'none';
+    //     // regButton.style.display = 'block';
+    //     // auth.style.display = 'none';
+    //     // regButton.innerHTML = 'Зарегистрироваться'
+    //     // loginBtn.innerText = 'Авторизоваться'
+    // }
+    else if (auth.contains(e.target)) {
         e.preventDefault()
+        form.querySelector('p').innerHTML = 'Войти в профиль';
         regField.style.visibility = 'hidden'
-        loginBtn.innerText = 'Войти'
+        loginBtn.style.display = 'block';
+        auth.style.display = 'none';
+        regButton.style.display = 'block';
+        registration.style.display = 'none';
     }
 })
