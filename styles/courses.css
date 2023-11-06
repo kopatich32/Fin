@@ -107,16 +107,14 @@ main {
     grid-column: 1/4; }
 
 .registration_wrapper {
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999999999;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px); }
+  z-index: 9999999999; }
   .registration_wrapper form {
     width: 450px;
     height: 240px;
@@ -127,17 +125,33 @@ main {
     position: relative;
     top: 50%;
     left: 50%;
+    height: 350px;
     border-radius: 5px;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 10px 2px black; }
     .registration_wrapper form p:first-child {
       margin-bottom: 20px;
+      margin-top: 20px;
       font-size: 24px; }
+    .registration_wrapper form label {
+      visibility: hidden;
+      position: relative; }
+      .registration_wrapper form label .file-input {
+        position: absolute;
+        width: 0;
+        opacity: 0; }
+      .registration_wrapper form label span {
+        position: relative;
+        cursor: pointer;
+        background: #2a73f9;
+        color: white;
+        padding: 10px; }
     .registration_wrapper form .form_buttons {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-      align-items: center; }
+      align-items: center;
+      margin-top: 20px; }
       .registration_wrapper form .form_buttons button:first-child {
         margin-right: 30px;
         font-size: 1.2em; }

@@ -1,7 +1,7 @@
 <?php
-session_start();
+//session_start();
 //session_destroy();
-require_once '../PHPscripts/auth.php' ?>
+//require_once '../PHPscripts/auth.php' ?>
 <header>
     <a href="index.php" title="на главную страницу">
         <div class="logo">
@@ -21,12 +21,12 @@ require_once '../PHPscripts/auth.php' ?>
     <a href="about.php">
         <div class="about">О нас</div>
     </a>
-    <?php
-    if($_SESSION['alreadyIn']){ ?>
-    <a href="#" class="user">
-        <?php  echo "<div ". "title=".$first_symbol['email'] . ">" . $final_sym . "</div>";?>
-       <?php } ?>
-    </a>
+<!--    --><?php
+//    if($_SESSION['alreadyIn']){ ?>
+<!--    <a href="#" class="user">-->
+<!--        --><?php // echo "<div ". "title=".$first_symbol['email'] . ">" . $final_sym . "</div>";?>
+<!--       --><?php //} ?>
+<!--    </a>-->
 
     <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
 

@@ -34,23 +34,27 @@ let regField = $('.top');
 let loginBtn = $('button[name="login"]');
 let registration = $('button[name="reg"]');
 let auth = $('.auth');
+let fileInput = $('.file-input').parentElement;
 
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {
         // e.preventDefault();
-        wrapperForm.style.display = 'block'
+        wrapperForm.style.display = 'block';
     }
     else if (!form.contains(e.target)) {
-        wrapperForm.style.display = 'none'
+        wrapperForm.style.display = 'none';
         }
     else if (regButton.contains(e.target)){ //sign_in
         e.preventDefault();
         form.querySelector('p').innerHTML = 'Регистрация';
-        regField.style.visibility = 'visible'
+        regField.style.visibility = 'visible';
         regButton.style.display = 'none';
         registration.style.display = 'block';
         loginBtn.style.display = 'none';
         auth.style.display = 'block';
+        fileInput.style.visibility = 'visible';
+        fileInput.removeAttribute('disabled');
+
     }
     // else if(registration.contains(e.target)){ //reg
     //     // regField.style.visibility = 'visible';
@@ -68,5 +72,14 @@ document.addEventListener('click', (e) => {
         auth.style.display = 'none';
         regButton.style.display = 'block';
         registration.style.display = 'none';
+        fileInput.style.visibility = 'hidden';
+        fileInput.setAttribute('disabled',true)
+
+
     }
 })
+
+let form1 = document.forms.registration;
+
+let res = form1.querySelector('label').offsetHeight
+console.log(res)
