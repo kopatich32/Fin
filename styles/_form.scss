@@ -40,10 +40,14 @@
         background: $textColor + #211111;
         color: white;
         padding: 10px;
-
       }
     }
-
+.absence{
+  border: 2px solid red;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
     .form_buttons {
       @include Flex(row, space-evenly, center);
       margin-top: 20px;

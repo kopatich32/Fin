@@ -28,6 +28,6 @@
 <!--       --><?php //} ?>
 <!--    </a>-->
 
-    <a href="#"> <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
+    <a href="" onsubmit="(e)=>{e.preventDefault();}">  <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
 
 </header>

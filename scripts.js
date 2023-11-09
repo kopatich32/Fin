@@ -34,11 +34,20 @@ let regField = $('.top');
 let loginBtn = $('button[name="login"]');
 let registration = $('button[name="reg"]');
 let auth = $('.auth');
+let absence = $('.absence');
 let fileInput = $('.file-input').parentElement;
+
+// form.onsubmit = (e)=>{
+//     e.preventDefault();
+//     console.log('lala')
+//     // wrapperForm.style.display = 'none';
+// // form.submit()
+// }
+
 
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {
-        // e.preventDefault();
+        e.preventDefault();
         wrapperForm.style.display = 'block';
     }
     else if (!form.contains(e.target)) {
@@ -53,6 +62,7 @@ document.addEventListener('click', (e) => {
         loginBtn.style.display = 'none';
         auth.style.display = 'block';
         fileInput.style.visibility = 'visible';
+        absence.style.display = 'none';
         fileInput.removeAttribute('disabled');
 
     }

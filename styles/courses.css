@@ -146,6 +146,11 @@ main {
         background: #2a73f9;
         color: white;
         padding: 10px; }
+    .registration_wrapper form .absence {
+      border: 2px solid red;
+      padding: 10px;
+      margin-right: 20px;
+      border-radius: 5px; }
     .registration_wrapper form .form_buttons {
       display: flex;
       flex-direction: row;

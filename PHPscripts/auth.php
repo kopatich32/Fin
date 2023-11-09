@@ -1,10 +1,86 @@
 <?php
-//session_start();
-//$host = 'localhost';
-//$owner = 'root';
-//$pass = '';
-//$data_base = 'Fin';
-//$DB_init = @new mysqli($host,$owner,$pass, $data_base);
+session_start();
+$host = 'localhost';
+$owner = 'root';
+$pass = '';
+$data_base = 'Fin';
+$DB_init = @new mysqli($host,$owner,$pass, $data_base);
+//    $name = $_POST['name'];
+//    $lastname = @$_POST['lastname'];
+    //    $file = @$_FILES['file'];
+$email = @$_POST['email'];
+$password = @$_POST['password'];
+
+$connect = $DB_init->query("SELECT * FROM `authorization` WHERE `email` = '$email' AND `password` = '$password'");
+$found = $connect->num_rows;
+if($found > 0){
+    echo 'lala';
+    $row = $connect->fetch_assoc();
+    $_SESSION['user'] =[
+        'id' => $row['id'],
+        'name' => $row['name'],
+        'surname' => $row['surname'],
+        'email' => $row['email'],
+        'password' => $row['password'],
+        'avatar' => $row['avatar'],
+    ];
+
+}else{
+    $_SESSION['message'] = 'Нет такого пользователя';
+unset($_SESSION['message']);
+
+}
+
+var_dump($_SESSION['message']);
+
+
+
+
+
+//    if($password || $email){
+//
+//    }else{
+//        $_SESSION['alert'] = 'This user is not exist';
+//        unset($_SESSION['alert']);
+//    }
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //if($DB_init->connect_errno){
 //    echo 'error: ' . $DB_init->connect_errno . ' ' . 'Reason: ' . $DB_init->connect_error;
 //}else{
@@ -14,14 +90,19 @@
 //        $reg_pass  = $_POST['password'];
 //        $reg_email = $_POST['email'];
 ////    registration
+//
 //        if(isset($_POST['reg'])){
+//
 //            if(empty($reg_name) || empty($reg_surname) || empty($reg_pass) || empty($reg_email)){
 //                echo 'Fill all areas';
-//            }else{
+//            }
+////            else if($existAcc = $DB_init->query("SELECT * FROM `authorization` WHERE `email` = $exist_email;")){
+////
+////            }
+//            else{
 //                $DB_init->query("INSERT INTO `authorization`( `name`, `surname`, `email`, `password`) VALUES ('$reg_name','$reg_surname','$reg_email','$reg_pass')");
 //            }
 //        }
-//
 //        //login
 //        if(isset($_POST['login'])){
 //            $res = $DB_init->query("SELECT * FROM `authorization` WHERE email = '$reg_email'  AND  password = '$reg_pass'");
@@ -37,15 +118,9 @@
 //            }
 //        }
 //    }
-//
 //    $first_symbol = $DB_init->query("SELECT * FROM `authorization`")->fetch_assoc();
 //    $final_sym = mb_strtoupper(str_split($first_symbol['email'])[0]);
 //}
-
-
-
-
-print_r($_POST['email']);
 
 
 
