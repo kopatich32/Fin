@@ -38,12 +38,25 @@ let registration = $('button[name="reg"]');
 let auth = $('.auth');
 let fileInput = $('.file-input').parentElement;
 
+
+//Scroll width
+let scrollwidth = window.innerWidth - document.documentElement.clientWidth;
+console.log(scrollwidth+'px');
+
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {
         e.preventDefault();
         authWrapper.style.display = 'block';
+        document.body.style.cssText +=
+            `overflow: hidden;
+            padding-right: ${scrollwidth}px;
+            `
     } else if (!formAuth.contains(e.target)) {
         authWrapper.style.display = 'none';
+        document.body.style.overflow = null;
+        document.body.style.paddingRight = null;
+
+
     }
 
     if (regButton.contains(e.target)) { //sign_in
@@ -80,3 +93,4 @@ formReg.addEventListener('submit', (e) => {
 // $('input[name="password"]').addEventListener('focus', () => {
 //     $('.alert').style.display = 'none';
 // })
+

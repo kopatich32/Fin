@@ -21,8 +21,10 @@ include '../PHPscripts/auth.php' ?>
         <div class="about">О нас</div>
     </a>
     <?php
-//    if($_SESSION['online'] == 'online'):?>
+    if(@!$_SESSION['online']):?>
     <a href="#">  <div class="account"><img src="../images/account_icon.svg.png" alt="Profile"></div></a>
-<!--    --><?php //endif; ?>
-
+    <?php else: ?>
+        <a href="userProfile.php">профиль</a>
+        <a style="cursor:pointer;" href="../PHPscripts/disconnect.php">Выход</a>
+    <?php endif; ?>
 </header>

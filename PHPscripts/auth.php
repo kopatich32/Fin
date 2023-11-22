@@ -38,19 +38,28 @@ if (isset($_POST['reg'])) {
 
 }
 // Auth
+
 if(isset($_POST['login'])){
     $auth_email = $_POST['auth_email'];
     $auth_password = $_POST['auth_password'];
-    $rows = $connect->query("SELECT * FROM `authorization` WHERE `email` = '$auth_email' AND `password` = '$auth_password'");
-    if($rows->num_rows > 0){
-        $data = $rows->fetch_assoc();
-        echo 'Вы вошли в профиль';
-        $_SESSION['online'] = 'online';
-        $_SESSION['name'] = $data['name'];
-        $_SESSION['lastname'] = $data['surname'];
-        $_SESSION['user'] = $data['email'];
-        $_SESSION['avatar'] = $data['avatar'];
-        $_SESSION['role'] = $data['role'];
+    $auth_rows = $connect->query("SELECT * FROM `authorization` WHERE `email` = '$auth_email'");
+    if($auth_rows->num_rows>0){
+        $data = $auth_rows->fetch_assoc();
+        if(password_verify($auth_password, $data['password'])){
+            $success_login = 'Вы успешно вошли в профиль';
+            $_SESSION['online'] = true;
+            $_SESSION['name'] = $data['name'];
+            $_SESSION['lastname'] = $data['surname'];
+            $_SESSION['user'] = $data['email'];
+            $_SESSION['avatar'] = $data['avatar'];
+            $_SESSION['role'] = $data['role'];
+            $this_page = $_SERVER['PHP_SELF'];
+            header('Location:'.$this_page);
+        }else{
+            $invalid_pass = 'Не верно введен пароль';
+        }
+    }else{
+        $invalid_email = 'Такая почта не найдена';
     }
 
 }

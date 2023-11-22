@@ -27,6 +27,7 @@ include 'registrationForm.php';
     </div>
 </div>
 
+
 <?php include 'footer.php';?>
 <script type="module" src="../scripts.js"></script>
 </body>

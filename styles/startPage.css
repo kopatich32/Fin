@@ -316,8 +316,7 @@ main {
   display: none; }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  background: red; }
+  width: 10px; }
 
 ::-webkit-scrollbar-track {
   background-color: #CBECFF;
@@ -678,14 +677,16 @@ footer {
     font-size: 50px; }
 
 .registration_wrapper {
-  display: block;
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999999999; }
+  z-index: 9999999999;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); }
   .registration_wrapper form {
     width: 450px;
     height: 240px;
@@ -768,7 +769,9 @@ footer {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999999999; }
+  z-index: 9999999999;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); }
   .auth_wrapper form {
     width: 450px;
     height: 240px;
