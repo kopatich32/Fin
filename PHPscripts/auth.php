@@ -1,133 +1,56 @@
 <?php
 session_start();
-$host = 'localhost';
-$owner = 'root';
-$pass = '';
-$data_base = 'Fin';
-$DB_init = @new mysqli($host,$owner,$pass, $data_base);
-//    $name = $_POST['name'];
-//    $lastname = @$_POST['lastname'];
-    //    $file = @$_FILES['file'];
-$email = @$_POST['email'];
-$password = @$_POST['password'];
+include 'DBconnect.php';
+global $connect;
+//registration
 
-$connect = $DB_init->query("SELECT * FROM `authorization` WHERE `email` = '$email' AND `password` = '$password'");
-$found = $connect->num_rows;
-if($found > 0){
-    echo 'lala';
-    $row = $connect->fetch_assoc();
-    $_SESSION['user'] =[
-        'id' => $row['id'],
-        'name' => $row['name'],
-        'surname' => $row['surname'],
-        'email' => $row['email'],
-        'password' => $row['password'],
-        'avatar' => $row['avatar'],
-    ];
-
-}else{
-    $_SESSION['message'] = 'Нет такого пользователя';
-unset($_SESSION['message']);
+if (isset($_POST['reg'])) {
+    $errors = [];
+    $name = $_POST['reg_name'];
+    $lastname = $_POST['reg_lastname'];
+    $email = $_POST['reg_email'];
+    $password = password_hash($_POST['reg_password'], PASSWORD_DEFAULT);
+    $profile_avatar = $_FILES['avatar'];
+    $role = 'user';
+    if ($name == '') {
+        $errors[] = 'Введите имя';
+    }
+    if ($lastname == '') {
+        $errors[] = 'Введите фамилию';
+    }
+    if ($email == '') {
+        $errors[] = 'Введите Email';
+    }
+    if ($password == '') {
+        $errors[] = 'Введите пароль';
+    }
+    $get_rows = $connect->query("SELECT * FROM `authorization` WHERE `email` = '$email'");
+    if (empty($errors)) {
+        if ($get_rows->num_rows > 0) {
+            $exist_email = '<div class="exist" style="border: 3px solid #af1212">Такой email уже зарегистрирован</div>';
+        } else {
+            $success = '<div class="success" style="border: 3px solid green">Успешная регистрация</div>';
+            @$connect->query("INSERT INTO `authorization`(`name`, `surname`, `email`, `password`, `avatar`, `role`) VALUES ('$name','$lastname','$email','$password','$profile_avatar','$role')");
+        }
+    } else {
+        echo '<div style="background: red">' . array_shift($errors) . '</div>';
+    }
 
 }
+// Auth
+if(isset($_POST['login'])){
+    $auth_email = $_POST['auth_email'];
+    $auth_password = $_POST['auth_password'];
+    $rows = $connect->query("SELECT * FROM `authorization` WHERE `email` = '$auth_email' AND `password` = '$auth_password'");
+    if($rows->num_rows > 0){
+        $data = $rows->fetch_assoc();
+        echo 'Вы вошли в профиль';
+        $_SESSION['online'] = 'online';
+        $_SESSION['name'] = $data['name'];
+        $_SESSION['lastname'] = $data['surname'];
+        $_SESSION['user'] = $data['email'];
+        $_SESSION['avatar'] = $data['avatar'];
+        $_SESSION['role'] = $data['role'];
+    }
 
-var_dump($_SESSION['message']);
-
-
-
-
-
-//    if($password || $email){
-//
-//    }else{
-//        $_SESSION['alert'] = 'This user is not exist';
-//        unset($_SESSION['alert']);
-//    }
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//if($DB_init->connect_errno){
-//    echo 'error: ' . $DB_init->connect_errno . ' ' . 'Reason: ' . $DB_init->connect_error;
-//}else{
-//    if(isset($_POST['login']) || isset($_POST['reg'])){
-//        $reg_name = $_POST['name'];
-//        $reg_surname = $_POST['lastname'];
-//        $reg_pass  = $_POST['password'];
-//        $reg_email = $_POST['email'];
-////    registration
-//
-//        if(isset($_POST['reg'])){
-//
-//            if(empty($reg_name) || empty($reg_surname) || empty($reg_pass) || empty($reg_email)){
-//                echo 'Fill all areas';
-//            }
-////            else if($existAcc = $DB_init->query("SELECT * FROM `authorization` WHERE `email` = $exist_email;")){
-////
-////            }
-//            else{
-//                $DB_init->query("INSERT INTO `authorization`( `name`, `surname`, `email`, `password`) VALUES ('$reg_name','$reg_surname','$reg_email','$reg_pass')");
-//            }
-//        }
-//        //login
-//        if(isset($_POST['login'])){
-//            $res = $DB_init->query("SELECT * FROM `authorization` WHERE email = '$reg_email'  AND  password = '$reg_pass'");
-//            if(empty($reg_email) || empty($reg_pass)){
-//                echo 'fill the fields';
-//            }else{
-//                if($res->num_rows>0){
-//                    $_SESSION['alreadyIn'] = 'Login success';
-//                    header('Location: ../pages/index.php');
-//                }else{
-//                    echo 'nope';
-//                }
-//            }
-//        }
-//    }
-//    $first_symbol = $DB_init->query("SELECT * FROM `authorization`")->fetch_assoc();
-//    $final_sym = mb_strtoupper(str_split($first_symbol['email'])[0]);
-//}
-
-
-
-
-
-
-
-
-
-
+}

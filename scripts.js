@@ -1,5 +1,6 @@
 //Anchor animation
-import anchor from './anchor.js'
+import anchor from './anchor.js';
+
 let $ = document.querySelector.bind(document);
 
 $('a[href="#top"]').onclick = anchor;
@@ -17,7 +18,7 @@ wrapperBurger.addEventListener('click', function (event) {
     }
     event.stopPropagation();
 })
-document.onclick = function(e) {
+document.onclick = function (e) {
     if (!verticalMenu.contains(e.target)) {
         verticalMenu.style.left = null;
         hamburgerButton.classList.remove('choose');
@@ -26,70 +27,56 @@ document.onclick = function(e) {
 
 
 // Log in form
-let form = document.forms.registration;
-let wrapperForm = $('.registration_wrapper');
+let formReg = document.forms.registration;
+let formAuth = document.forms.auth;
+let regWrapper = $('.registration_wrapper');
+let authWrapper = $('.auth_wrapper');
 let accBtn = $('.account');
 let regButton = $('button[name="sign_in"]');
-let regField = $('.top');
-let loginBtn = $('button[name="login"]');
+// let loginBtn = $('button[name="login"]');
 let registration = $('button[name="reg"]');
 let auth = $('.auth');
-let absence = $('.absence');
 let fileInput = $('.file-input').parentElement;
-
-// form.onsubmit = (e)=>{
-//     e.preventDefault();
-//     console.log('lala')
-//     // wrapperForm.style.display = 'none';
-// // form.submit()
-// }
-
 
 document.addEventListener('click', (e) => {
     if (accBtn.contains(e.target)) {
         e.preventDefault();
-        wrapperForm.style.display = 'block';
+        authWrapper.style.display = 'block';
+    } else if (!formAuth.contains(e.target)) {
+        authWrapper.style.display = 'none';
     }
-    else if (!form.contains(e.target)) {
-        wrapperForm.style.display = 'none';
-        }
-    else if (regButton.contains(e.target)){ //sign_in
+
+    if (regButton.contains(e.target)) { //sign_in
         e.preventDefault();
-        form.querySelector('p').innerHTML = 'Регистрация';
-        regField.style.visibility = 'visible';
-        regButton.style.display = 'none';
-        registration.style.display = 'block';
-        loginBtn.style.display = 'none';
-        auth.style.display = 'block';
-        fileInput.style.visibility = 'visible';
-        absence.style.display = 'none';
+        authWrapper.style.display = 'none';
+        regWrapper.style.display = 'block';
         fileInput.removeAttribute('disabled');
-
+    }else if(!formReg.contains(e.target)){
+        regWrapper.style.display = 'none';
     }
-    // else if(registration.contains(e.target)){ //reg
-    //     // regField.style.visibility = 'visible';
-    //     // registration.style.display = 'none';
-    //     // regButton.style.display = 'block';
-    //     // auth.style.display = 'none';
-    //     // regButton.innerHTML = 'Зарегистрироваться'
-    //     // loginBtn.innerText = 'Авторизоваться'
-    // }
-    else if (auth.contains(e.target)) {
-        e.preventDefault()
-        form.querySelector('p').innerHTML = 'Войти в профиль';
-        regField.style.visibility = 'hidden'
-        loginBtn.style.display = 'block';
-        auth.style.display = 'none';
-        regButton.style.display = 'block';
-        registration.style.display = 'none';
-        fileInput.style.visibility = 'hidden';
-        fileInput.setAttribute('disabled',true)
-
-
+    if(auth.contains(e.target)){
+        e.preventDefault();
+        regWrapper.style.display = 'none';
+        authWrapper.style.display = 'block';
     }
 })
 
-let form1 = document.forms.registration;
+formReg.addEventListener('submit', (e) => {
+    let isValid = true;
+    let lengthOfInput = $('input[name="reg_password"]').value;
+    if (lengthOfInput.length > 0 && lengthOfInput.length < 6) {
+        $('.alert').style.display = 'block';
+        $('.alert').innerText = 'Слишком короткий пароль';
+        isValid = false;
+    }
+    if(!isValid){
+        e.preventDefault();
+    }else{
+        isValid = true;
+    }
 
-let res = form1.querySelector('label').offsetHeight
-console.log(res)
+
+})
+// $('input[name="password"]').addEventListener('focus', () => {
+//     $('.alert').style.display = 'none';
+// })

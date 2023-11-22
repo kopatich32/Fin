@@ -27,7 +27,6 @@
       font-size: 24px;
     }
     label{
-      visibility: hidden;
       position: relative;
       .file-input{
         position: absolute;
@@ -42,12 +41,7 @@
         padding: 10px;
       }
     }
-.absence{
-  border: 2px solid red;
-  padding: 10px;
-  margin-right: 20px;
-  border-radius: 5px;
-}
+
     .form_buttons {
       @include Flex(row, space-evenly, center);
       margin-top: 20px;
@@ -67,14 +61,8 @@ button:first-child{
         &:first-child{}
         margin-right: 20px;
       }
-      .reg, .auth{
-        display: none;
-      }
     }
     .insert_field{
-      .top{
-        visibility: hidden;
-      }
 
       .top > input, .bottom > input{
         @include size(210px, 30px);
@@ -86,4 +74,100 @@ button:first-child{
 }
 .display{
   display: block;
+}
+
+.bottomWrapper{
+  label{
+    height: 30px;
+  }
+  display: flex;
+  width: 100%;
+  div{
+    margin-left: auto;
+    border: 2px solid orangered;
+
+  }
+}
+
+.alert{
+  display: none;
+  padding: 4px;
+  font-size: 14px;
+}
+
+//auth
+.auth_wrapper{
+  display: none;
+  //display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  @include size(100vw,100vh);
+  z-index: 9999999999;
+  //backdrop-filter: blur(2px);
+  //-webkit-backdrop-filter: blur(2px);
+
+  form{
+    @include size(450px, 240px);
+    @include Flex(column, center,center);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 350px;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    box-shadow: 1px 1px 10px 2px black;
+    .insert_field{
+      .top > input, .bottom > input{
+        @include size(210px, 30px);
+        margin-bottom: 25px;
+      }
+    }
+    p:first-child{
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 24px;
+    }
+    label{
+      positiosn: relative;
+      .file-input{
+        position: absolute;
+        width: 0;
+        opacity: 0;
+      }
+      span{
+        position: relative;
+        cursor: pointer;
+        background: $textColor + #211111;
+        color: white;
+        padding: 10px;
+      }
+    }
+
+    .form_buttons {
+      @include Flex(row, space-evenly, center);
+      margin-top: 20px;
+      button:first-child{
+        margin-right: 30px;
+        font-size: 1.2em;
+      }
+      button {
+        @include Flex(column, center, center);
+        padding: 10px;
+        height: 30px;
+        background-color: $textColor;
+        border-radius: 12px;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+        &:first-child{}
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.exist, .success{
+  margin-bottom: 5px;
+  padding:4px;
 }
