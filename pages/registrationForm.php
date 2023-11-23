@@ -4,11 +4,13 @@ require_once '../PHPscripts/auth.php';
 global $rows;
 global $errors;
 ?>
+<?= @$GLOBALS['success'] ?>
+
 <div class="registration_wrapper">
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF'])?>" name="registration" method="POST" enctype="multipart/form-data">
+
+    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF'])?>"  name="registration" method="POST" enctype="multipart/form-data">
         <p>Зарегистрироваться</p>
         <?= @$GLOBALS['exist_email'] ?>
-        <?= @$GLOBALS['success'] ?>
         <div class="insert_field">
             <div class="top">
                 <input type="text" name="reg_name" placeholder="Имя *"  value="<?=@$_POST['reg_name'] ?>" required>
@@ -23,9 +25,6 @@ global $errors;
                     <input class="file-input" type="file" name="avatar">
                     <span>Фото профиля</span>
                 </label>
-                <!--            --><?php //if(@$rows['email'] == isset($_POST['email'])):?>
-                <!--            <div>Такая почта уже зарегистрирована</div>-->
-                <!--            --><?php //endif; ?>
                 <div class="alert"></div>
             </div>
         </div>
@@ -39,8 +38,7 @@ global $errors;
 <div class="auth_wrapper">
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF'])?>" name="auth" method="POST" enctype="multipart/form-data">
         <p>Войти в профиль</p>
-        <?= @$GLOBALS['invalid_pass'] ?>
-        <?= @$GLOBALS['invalid_email'] ?>
+        <?= @array_shift($auth_errors)?>
         <div class="insert_field">
             <div class="bottom">
                 <input type="email" name="auth_email" placeholder="Почта *" value="<?=@$_POST['auth_email'] ?>" required>

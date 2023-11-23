@@ -87,10 +87,11 @@ formReg.addEventListener('submit', (e) => {
     }else{
         isValid = true;
     }
-
-
 })
-// $('input[name="password"]').addEventListener('focus', () => {
-//     $('.alert').style.display = 'none';
-// })
-
+// Сохранение окна открытым, если форма не прошла валидацию
+if($('input[name="auth_email"]').value != ""){
+authWrapper.style.display ='block';
+}
+if($('input[name="reg_email"]').value != ''){
+  regWrapper.style.display = 'block';
+}

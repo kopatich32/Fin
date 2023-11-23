@@ -2,6 +2,7 @@
 session_start();
 include 'DBconnect.php';
 global $connect;
+include 'clean.php';
 //registration
 
 if (isset($_POST['reg'])) {
@@ -29,16 +30,21 @@ if (isset($_POST['reg'])) {
         if ($get_rows->num_rows > 0) {
             $exist_email = '<div class="exist" style="border: 3px solid #af1212">Такой email уже зарегистрирован</div>';
         } else {
-            $success = '<div class="success" style="border: 3px solid green">Успешная регистрация</div>';
             @$connect->query("INSERT INTO `authorization`(`name`, `surname`, `email`, `password`, `avatar`, `role`) VALUES ('$name','$lastname','$email','$password','$profile_avatar','$role')");
+            header('Location:'.$_SERVER['PHP_SELF'] . '?message=success');
         }
     } else {
         echo '<div style="background: red">' . array_shift($errors) . '</div>';
     }
+}
+if(@$_GET['message'] == 'success'){
+    $success = '<div class="success" style="border: 3px solid green">Успешная регистрация</div>';
+//        header('Location:'.$_SERVER['PHP_SELF']);
+
 
 }
 // Auth
-
+$auth_errors = [];
 if(isset($_POST['login'])){
     $auth_email = $_POST['auth_email'];
     $auth_password = $_POST['auth_password'];
@@ -46,6 +52,7 @@ if(isset($_POST['login'])){
     if($auth_rows->num_rows>0){
         $data = $auth_rows->fetch_assoc();
         if(password_verify($auth_password, $data['password'])){
+
             $success_login = 'Вы успешно вошли в профиль';
             $_SESSION['online'] = true;
             $_SESSION['name'] = $data['name'];
@@ -56,10 +63,10 @@ if(isset($_POST['login'])){
             $this_page = $_SERVER['PHP_SELF'];
             header('Location:'.$this_page);
         }else{
-            $invalid_pass = 'Не верно введен пароль';
+            $auth_errors['invalid_pass'] = 'Не верно введен пароль';
         }
     }else{
-        $invalid_email = 'Такая почта не найдена';
+        $auth_errors['invalid_email'] = 'Такая почта не найдена';
     }
 
 }
