@@ -263,6 +263,14 @@ main {
   margin-bottom: 5px;
   padding: 4px; }
 
+.success_registration {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  font-size: 20px; }
+
 @media screen and (max-width: 800px) {
   .picture {
     display: none; }

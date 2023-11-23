@@ -95,3 +95,8 @@ authWrapper.style.display ='block';
 if($('input[name="reg_email"]').value != ''){
   regWrapper.style.display = 'block';
 }
+
+let successWindow = $('.success_registration');
+setTimeout(function(){
+      successWindow.style.display = 'none';
+},1500);

@@ -4,8 +4,7 @@ require_once '../PHPscripts/auth.php';
 global $rows;
 global $errors;
 ?>
-<?= @$GLOBALS['success'] ?>
-
+<div class="success_registration"><?= @$_SESSION['success'] ?></div>
 <div class="registration_wrapper">
 
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF'])?>"  name="registration" method="POST" enctype="multipart/form-data">

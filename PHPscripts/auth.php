@@ -29,20 +29,21 @@ if (isset($_POST['reg'])) {
     if (empty($errors)) {
         if ($get_rows->num_rows > 0) {
             $exist_email = '<div class="exist" style="border: 3px solid #af1212">Такой email уже зарегистрирован</div>';
-        } else {
+        }else{
             @$connect->query("INSERT INTO `authorization`(`name`, `surname`, `email`, `password`, `avatar`, `role`) VALUES ('$name','$lastname','$email','$password','$profile_avatar','$role')");
-            header('Location:'.$_SERVER['PHP_SELF'] . '?message=success');
+//            header('Location:'.$_SERVER['PHP_SELF'] . '?message=success');
+            header('Location:'.$_SERVER['PHP_SELF']);
+            $_SESSION['success'] = '<div class="success" style="border: 3px solid green">Успешная регистрация</div>';
+
         }
     } else {
         echo '<div style="background: red">' . array_shift($errors) . '</div>';
     }
 }
-if(@$_GET['message'] == 'success'){
-    $success = '<div class="success" style="border: 3px solid green">Успешная регистрация</div>';
+//if(@$_GET['message'] == 'success'){
+//    $GLOBALS['success'] = '<div class="success" style="border: 3px solid green">Успешная регистрация</div>';
 //        header('Location:'.$_SERVER['PHP_SELF']);
-
-
-}
+//}
 // Auth
 $auth_errors = [];
 if(isset($_POST['login'])){
@@ -60,8 +61,7 @@ if(isset($_POST['login'])){
             $_SESSION['user'] = $data['email'];
             $_SESSION['avatar'] = $data['avatar'];
             $_SESSION['role'] = $data['role'];
-            $this_page = $_SERVER['PHP_SELF'];
-            header('Location:'.$this_page);
+            header('Location:'.$_SERVER['PHP_SELF']);
         }else{
             $auth_errors['invalid_pass'] = 'Не верно введен пароль';
         }
