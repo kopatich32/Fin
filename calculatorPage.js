@@ -50,7 +50,6 @@ function inputFunction(){
     if(+insertedMoney.value[8]){
         this.value = this.value.substring(0, 8)
     }
-
     total()
     checkDate()
 }
